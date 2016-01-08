@@ -1,96 +1,52 @@
 Rails.application.routes.draw do
-  get 'messages/create'
 
-  get 'messages/destroy'
+  get 'welcome/index'
 
-  get 'chats/create'
+ resources :users
+ resources :chats
+ resources :messages
+ resources :toys
+ resources :session
 
-  get 'chats/destroy'
-
-  get 'toys/index'
-
-  get 'toys/new'
-
-  get 'toys/create'
-
-  get 'toys/show'
-
-  get 'toys/edit'
-
-  get 'toys/update'
-
-  get 'toys/destroy'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+#         Prefix Verb   URI Pattern                  Controller#Action
+#         users GET    /users(.:format)             users#index
+#               POST   /users(.:format)             users#create
+#      new_user GET    /users/new(.:format)         users#new
+#     edit_user GET    /users/:id/edit(.:format)    users#edit
+#          user GET    /users/:id(.:format)         users#show
+#               PATCH  /users/:id(.:format)         users#update
+#               PUT    /users/:id(.:format)         users#update
+#               DELETE /users/:id(.:format)         users#destroy
+#         chats GET    /chats(.:format)             chats#index
+#               POST   /chats(.:format)             chats#create
+#      new_chat GET    /chats/new(.:format)         chats#new
+#     edit_chat GET    /chats/:id/edit(.:format)    chats#edit
+#          chat GET    /chats/:id(.:format)         chats#show
+#               PATCH  /chats/:id(.:format)         chats#update
+#               PUT    /chats/:id(.:format)         chats#update
+#               DELETE /chats/:id(.:format)         chats#destroy
+#      messages GET    /messages(.:format)          messages#index
+#               POST   /messages(.:format)          messages#create
+#   new_message GET    /messages/new(.:format)      messages#new
+#  edit_message GET    /messages/:id/edit(.:format) messages#edit
+#       message GET    /messages/:id(.:format)      messages#show
+#               PATCH  /messages/:id(.:format)      messages#update
+#               PUT    /messages/:id(.:format)      messages#update
+#               DELETE /messages/:id(.:format)      messages#destroy
+#          toys GET    /toys(.:format)              toys#index
+#               POST   /toys(.:format)              toys#create
+#       new_toy GET    /toys/new(.:format)          toys#new
+#      edit_toy GET    /toys/:id/edit(.:format)     toys#edit
+#           toy GET    /toys/:id(.:format)          toys#show
+#               PATCH  /toys/:id(.:format)          toys#update
+#               PUT    /toys/:id(.:format)          toys#update
+#               DELETE /toys/:id(.:format)          toys#destroy
+# session_index GET    /session(.:format)           session#index
+#               POST   /session(.:format)           session#create
+#   new_session GET    /session/new(.:format)       session#new
+#  edit_session GET    /session/:id/edit(.:format)  session#edit
+#       session GET    /session/:id(.:format)       session#show
+#               PATCH  /session/:id(.:format)       session#update
+#               PUT    /session/:id(.:format)       session#update
+#               DELETE /session/:id(.:format)       session#destroy
 end
