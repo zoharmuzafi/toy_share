@@ -4,17 +4,23 @@ class MessagesController < ApplicationController
 	# 	@messages = current_user.messages
 	# end
 
+	def new
+	end
   def create
   	message_params = params.require(:message).permit(:content, :chat_id, :user_id) 
-  	new_message_user = user.message.new(message_params)
+  	new_message_user = current_user.messages.new(message_params)
   	chat=Chat.find(message.chat_id)
   	if chat
   		new_message_chat = chat.messages.new(message_params)
   	else
-  		chat = Chat.new
+  		user = User.find(message_params["user_id"])
+  		chat = Chat.new(user)
   		new_message_chat = chat.messages.new(message_params)
+  		current_user.chats(chat).save
+  		user.chats(chat).save
   	end
-  	if new_message_chat.save && new_message_user.save_message
+  	
+  	if new_message_chat.save && new_message_user.save_message 
   		flash[:notice] = "Message was sent"
   		redirect_to toys_path
   	else

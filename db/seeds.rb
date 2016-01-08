@@ -14,3 +14,4 @@ toys = Toy.create([
 cities = City.create ([{name: "San Francisco"}, {name: "Lafayette"}])
 
 users = User.create([{ f_name: "Michael", l_name: "Rockway", email: "email@email", password: "123456", bio: "Here is a  bio" }])
+users = User.create([{ f_name: "Zohar", l_name: "Muzafi", email: "email.u@email", password: "123456", bio: "Here is my bio" }])
