@@ -5,6 +5,11 @@ class ToysController < ApplicationController
 
   def index
     @toys = Toy.all
+    @cities = City.all
+  end
+
+  def filter_toys
+    
   end
 
   def new

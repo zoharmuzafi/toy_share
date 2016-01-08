@@ -8,21 +8,20 @@
 		<div class="col m2">
 			<div class="search-toys">
 				<p>Filter toys by</p>
-				<select>
-					<% @toys.uniq.each do |toy| %>
-						<option><%= toy.age_range %></option> 
-					<% end %>
-				</select>
-				<select>
-					<% @toys.uniq.each do |toy| %>
-						<option><%= toy.gender %></option>
-					<% end %>
-				</select>
-				<select>
-					<% @toys.uniq.each do |toy| %>
-						<option><%= toy.city.name %></option>
-					<% end %>
-				</select>
+				<%= form_tag '', method: :get do %>
+					<div class="input-group">
+							<%= select_tag :age_range, options_for_select([ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), prompt: "Age Range" %>
+					</div>
+					<div class="input-group">
+						<%= select_tag :gender, options_for_select([ "Both", "Male", "Female" ]), prompt: "Gender" %>
+					</div>
+					<div class="input-group">
+						<%= select_tag :name, options_for_select(@cities.collect { |city| city.name }), prompt: "City" %>
+					</div>
+					<div class="input-group">
+						<%= submit_tag "Submit" %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 		<div class="col m10">
