@@ -8,5 +8,9 @@
 ###### DELETE THIS LINE AND BELOW ##########
 toys = Toy.create([
 										{ name: "Legos", description: "Star Wars legos set", gender: "Male", age_range: "0-3", user_id: 1, city_id: 1 },
-										{ name: "Barbies", description: "Barbie doll"}, gender: "Female", age_range: "6-9", user_id: 2, city_id: 1 }
+										{ name: "Barbies", description: "Barbie doll", gender: "Female", age_range: "6-9", user_id: 1, city_id: 1 }
 									])
+
+cities = City.create ([{name: "San Francisco"}])
+
+users = User.create([{ f_name: "Michael", l_name: "Rockway", email: "email@email", password: 123456, bio: "Here is a  bio" }])

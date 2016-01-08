@@ -1,2 +1,46 @@
-<h1>Toys#index</h1>
-<p>Find me in app/views/toys/index.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col m12">
+			<h1>Toys looking for a new home</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col m2">
+			<div class="search-toys">
+				<p>Filter toys by</p>
+				<select>
+					<% @toys.uniq.each do |toy| %>
+						<option><%= toy.age_range %></option> 
+					<% end %>
+				</select>
+				<select>
+					<% @toys.uniq.each do |toy| %>
+						<option><%= toy.gender %></option>
+					<% end %>
+				</select>
+				<select>
+					<% @toys.uniq.each do |toy| %>
+						<option><%= toy.city.name %></option>
+					<% end %>
+				</select>
+			</div>
+		</div>
+		<div class="col m10">
+			<hr>
+			<% @toys.each do |toy| %>
+			<div class="toy-images">
+				<p>Image Carousel Here</p>
+			</div>
+			<div class="toy-info">
+				<h2 class="toy-name"><%= link_to "#{toy.name}", toy_path(toy.id) %></h2>
+				<p class="toy-desc"><%= toy.description %></p>
+				<p class="toy-age"><%= toy.age_range %></p>
+				<p class="toy-gender"><%= toy.gender %></p>
+				<p class="toy-city"><%= toy.city.name %></p>
+				<button class="toy-contact">Send <%= toy.user.f_name %> a message</button>
+			</div>
+			<hr>
+			<% end %>
+		</div>
+	</div>
+</div>

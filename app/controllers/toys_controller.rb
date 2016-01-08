@@ -1,7 +1,7 @@
 class ToysController < ApplicationController
   
   # Find toy ID on page load
-  before_filter :toy_params, except: [:new, :create, :index]
+  before_filter :toy_params, except: [:index, :new, :create, :show]
 
   def index
     @toys = Toy.all
