@@ -5,13 +5,19 @@ class SessionsController < ApplicationController
 
   def create
   	@user = User.find_by_email(params[:email])
-  	if @user && @user.authenticate
-
+  	if @user && @user.authenticate(params[:password])
+  		flash[:notice] = "You have successfully logged in"
+  		sessiod[:user_id] = @user.id
+  		redirect_to user_path(@user)
+  	else
+  		flash[:error] = @user.errors.full_messages.join(", ")
+  		redirect_to login_path
   	end
   end
 
   def destroy
-
+  	session[:user_id] = nil
+  	redirect_to root_path
   end
 
   private
