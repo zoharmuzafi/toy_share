@@ -1,6 +1,6 @@
 <% @chats.each do |chat| %>
 	<% messages = chat.messages %>
-	<%= messages.each do |message| %>
-		<%= message %>
+	<% messages.each do |message| %>
+		<%= message.content %>
 	<% end %>
 <% end %>

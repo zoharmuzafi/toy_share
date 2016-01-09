@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
   	recipient_id = message_params["user_id"]
   	message_params["user_id"] = current_user.id
   	new_message = Message.new(message_params)
-
   	if new_message.save
 	  	if new_message.chat_id
 	  		chat = Chat.find(new_message.chat_id)
@@ -21,7 +20,7 @@ class MessagesController < ApplicationController
 	  		chat = Chat.create
 	  		current_user.chats  << chat
 	  		recipient.chats << chat
-	  		new_message_chat = chat.messages.new(message_params)
+	  		chat.messages << new_message
 	  	end
 	  	flash[:notice] = "Message was sent"
 	  	redirect_to toys_path
