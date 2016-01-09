@@ -22,6 +22,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
   end
 
   def edit
+    @user = current_user
   end
 
   def update
