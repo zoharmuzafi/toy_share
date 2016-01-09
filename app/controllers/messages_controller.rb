@@ -8,26 +8,28 @@ class MessagesController < ApplicationController
 	end
   def create
   	message_params = params.require(:message).permit(:content, :chat_id, :user_id) 
-  	new_message_user = current_user.messages.new(message_params)
-  	chat=Chat.find(message.chat_id)
-  	if chat
-  		new_message_chat = chat.messages.new(message_params)
-  	else
-  		user = User.find(message_params["user_id"])
-  		chat = Chat.new(user)
-  		new_message_chat = chat.messages.new(message_params)
-  		current_user.chats(chat).save
-  		user.chats(chat).save
-  	end
-  	
-  	if new_message_chat.save && new_message_user.save_message 
-  		flash[:notice] = "Message was sent"
-  		redirect_to toys_path
-  	else
-  		flash[:error] = "Message wasn't sent"
+  	recipient_id = message_params["user_id"]
+  	message_params["user_id"] = current_user.id
+  	new_message = Message.new(message_params)
+
+  	if new_message.save
+	  	if new_message.chat_id
+	  		chat = Chat.find(new_message.chat_id)
+	  		new_message_chat = chat.messages.new(message_params)
+	  	else
+	  		recipient = User.find(recipient_id)
+	  		chat = Chat.create
+	  		current_user.chats  << chat
+	  		recipient.chats << chat
+	  		new_message_chat = chat.messages.new(message_params)
+	  	end
+	  	flash[:notice] = "Message was sent"
+	  	redirect_to toys_path
+	  else
+	  	flash[:error] = "Message wasn't sent"
   		redirect_to new_message_path
-  	end
-  end
+	  end
+	end
 
   def destroy
   	message_id = params[:id]
