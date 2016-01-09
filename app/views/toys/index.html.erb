@@ -35,7 +35,8 @@
 				<p class="toy-desc"><%= toy.description %></p>
 				<p class="toy-age"><%= toy.age_range %></p>
 				<p class="toy-gender"><%= toy.gender %></p>
-				<p class="toy-city"><%= toy.city.name %></p>
+				<p class="toy-city"><%= toy.city_id %></p>
+				<%= image_tag toy.image.url(:medium) %>
 				<button class="toy-contact">Send <%= toy.user.f_name %> a message</button>
 			</div>
 			<hr>

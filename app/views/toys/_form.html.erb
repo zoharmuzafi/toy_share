@@ -1,10 +1,10 @@
-<%= form_for @toy do |f| %>
+<%= form_for :toy, url: '/toys', html: { multipart: true } do |f| %>
 <div class="input-field">
-	<%= f.text_field :name, autofocus: true, placeholder: "Name of toy" %>
+	<%= f.text_field :name, autofocus: true  %>
 	<%= f.label :name %>
 </div>
 <div class="input-field">
-	<%= f.text_area :description %>
+	<%= f.text_field :description %>
 	<%= f.label :description, "Description of the toy" %>
 </div>
 <div class="input-field">
@@ -23,14 +23,14 @@
 	<%= f.select :age_range, [ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ] %>
 </div>
 <div class="hidden-fields">
-	<%= f.hidden_field :user_id %> <!-- Add after current_user method exists , value: current_user.id -->
-	<%= f.hidden_field :city_id %> <!-- Add after current_user method exists , value: current_user.city_id -->
+	<%= f.hidden_field :user_id, value: "#{current_user.id}" %> <!-- Add after current_user method exists , value: current_user.id -->
+	<%= f.hidden_field :city_id, value: "#{current_user.city_id}" %> <!-- Add after current_user method exists , value: current_user.city_id -->
 </div>
 <!-- Add multiple image upload -->
 <div class="input-field">
-	<%= f.label :images, "Upload picutres of your toy" %>
+	<%= f.label :image, "Upload picutres of your toy" %>
 	<br><br>
-	<%= f.file_field :images %>
+	<%= f.file_field :image %>
 </div>
 <div class="input-field">
 	<%= f.submit "Submit" %>
