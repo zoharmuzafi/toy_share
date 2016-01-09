@@ -58,7 +58,7 @@ class ToysController < ApplicationController
     private 
 
     def toy_params
-      params.require(:toy).permit( :name, :description, :gender, :age_range, :imgaes, :user_id, :city_id, :available )
+      params.require(:toy).permit( :name, :description, :gender, :age_range, :images, :user_id, :city_id, :available )
     end
 
 
