@@ -1,7 +1,7 @@
 class ToysController < ApplicationController
   
   # Find toy ID on page load
-  before_filter :toy_params, except: [:index, :new, :create, :show]
+  before_filter :toy_params, except: [:index, :new, :create]
 
   def index
     @toys = Toy.all
@@ -54,13 +54,15 @@ class ToysController < ApplicationController
       flash[:error] = @toy.error.full_messages.join(", ")
       redirect_to edit_toy_path(@toy)
     end
-
-    private 
-
-    def toy_params
-      params.require(:toy).permit( :name, :description, :gender, :age_range, :images, :user_id, :city_id, :available )
-    end
-
-
   end
+
+
+  private 
+
+  def toy_params
+    params.require(:toy).permit(:name, :description, :gender, :age_range, :image, :user_id, :city_id,  :available )
+  end
+
+
+  
 end
