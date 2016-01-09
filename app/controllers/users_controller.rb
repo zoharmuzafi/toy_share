@@ -10,7 +10,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       flash[:notice] = @user.errors.map{|k,v| "#{k} #{v}".capitalize}
       redirect_to '/signup'
