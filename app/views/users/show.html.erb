@@ -1,5 +1,23 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
 <%= current_user.f_name %>
+<h1>Profile page</h1>
+      <div class="row">
+        <div class="col s8 m4">
+          <div class="card z-depth-2">
+            <div class="card-image">
+              <%= image_tag @user.avatar.url(:large) %>
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+			<h5><%= @user.f_name %> <%= @user.l_name %></h5>
+			<p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
+            <h5>Bio:</h5>
+              <p> <%= @user.bio %> </p>
+            </div>
+            <div class="card-action">
+              <p><%= link_to 'Edit', edit_user_path(@user), class: "btn-floating btn-large green" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 

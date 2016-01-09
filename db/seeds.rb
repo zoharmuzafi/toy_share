@@ -13,10 +13,12 @@ toys = Toy.create([
 
 cities = City.create ([{name: "San Francisco"}, {name: "Lafayette"}])
 
+
 user1 = User.create([{ f_name: "Michael", l_name: "Rockway", email: "email@email", password: "123456", bio: "Here is a  bio" }])
 user2 = User.create([{ f_name: "Zohar", l_name: "Muzafi", email: "email.u@email", password: "123456", bio: "Here is my bio" }])
 chat = Chat.create([{}])
 message = Message.create([{content: "hi there", user_id:1, chat_id:1}])
+
 
 
 
