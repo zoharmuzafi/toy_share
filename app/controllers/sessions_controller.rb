@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -10,22 +11,26 @@ class SessionsController < ApplicationController
   	# Allows user to sign in through omniauth 
   	user = User.sign_in_from_omniauth(auth)
 
-    @user = User.find_by_email(params[:email]) 
-    if @user && @user.authenticate(params[:password]) 
-      # When signing in, users are assigned an user id
-      session[:user_id] = @user.id
-      # After signing in, users are directed to root path
-      redirect_to root_path, notice: "You are signed in!"
-    else 
-      flash[:error] = "Oops! Something went wrong."
-      redirect_to login_path
-    end
+  	@user = User.find_by_email(user_params[:email])
+		if @user && @user.authenticate(user_params[:password])
+			flash[:notice] = "You have successfully logged in"
+			session[:user_id] = @user.id
+			redirect_to user_path(@user)
+		else
+			flash[:error] = "Username or password is incorrect"
+			redirect_to login_path
+		end
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to login_path, notice: "You are logged out!"
-
+  	session[:user_id] = nil
+  	redirect_to root_path
   end
-  
+
+  private
+
+  def user_params
+  	params.require(:user).permit(:email, :password)
+  end
+
 end
