@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 	has_many :toys, dependent: :destroy
 	belongs_to :city
 
-end
 	# Using auth from omniauth 
 	def self.sign_in_form_omniauth(auth)
 		# Finding the user according to the provider and from the user id
