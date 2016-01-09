@@ -1,10 +1,10 @@
 <%= form_for @toy do |f| %>
 <div class="input-field">
-	<%= f.text_field :name, autofocus: true, placeholder: "Name of toy" %>
+	<%= f.text_field :name, autofocus: true  %>
 	<%= f.label :name %>
 </div>
 <div class="input-field">
-	<%= f.text_area :description %>
+	<%= f.text_field :description %>
 	<%= f.label :description, "Description of the toy" %>
 </div>
 <div class="input-field">
