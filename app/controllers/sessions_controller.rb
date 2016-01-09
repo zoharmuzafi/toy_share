@@ -4,6 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
+  	# Sends request to facebook
+  	auth = request.env["omniauth.auth"]
+  	# Requesting only basic information from facebook
+  	session[:omniauth] = auth.except('extra')
+  	# Allows user to sign in through omniauth 
+  	user = User.sign_in_from_omniauth(auth)
+
   	@user = User.find_by_email(user_params[:email])
 		if @user && @user.authenticate(user_params[:password])
 			flash[:notice] = "You have successfully logged in"

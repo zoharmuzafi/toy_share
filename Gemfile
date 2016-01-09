@@ -49,3 +49,5 @@ group :development do
   gem 'spring'
 end
 
+# Omniauth for facebook 
+  gem 'omniauth-facebook'
