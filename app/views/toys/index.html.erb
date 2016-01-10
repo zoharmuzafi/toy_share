@@ -36,8 +36,7 @@
 						<p class="toy-desc"><%= toy.description %></p>
 						<p class="toy-age"><%= toy.age_range %></p>
 						<p class="toy-gender"><%= toy.gender %></p>
-						<!-- add toy city -->
-						<button class="toy-contact">Send <%= toy.user.f_name %> a message</button>
+						<p class="toy-city"><%= toy.city.name %></p>
 						<br>
 						<% if current_user.id == toy.user_id %>
 							<%= link_to "Edit Toy", edit_toy_path(toy) %>
