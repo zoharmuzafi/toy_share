@@ -1,6 +1,6 @@
 class ToysController < ApplicationController
   before_filter :get_toy, except: [:index, :new, :create]
-  before_filter :toy_params, only: [:create, :update]
+  before_filter :toy_params, only: [:create]
   
   def index
     @toys = Toy.all
@@ -41,6 +41,7 @@ class ToysController < ApplicationController
   end
 
   def update
+    toy_params = params.require(:toy).permit(:name, :description, :gender, :age_range, :image, :user_id, :available )
     if @toy.update_attributes(toy_params)
       flash[:notice] = "You have successfully altered #{@toy.name}"
       redirect_to user_path(current_user)
