@@ -27,19 +27,25 @@
 		<div class="col m10">
 			<hr>
 			<% @toys.each do |toy| %>
-			<div class="toy-images">
-				<p>Image Carousel Here</p>
-			</div>
-			<div class="toy-info">
-				<h2 class="toy-name"><%= link_to "#{toy.name}", toy_path(toy.id) %></h2>
-				<p class="toy-desc"><%= toy.description %></p>
-				<p class="toy-age"><%= toy.age_range %></p>
-				<p class="toy-gender"><%= toy.gender %></p>
-				<p class="toy-city"><%= toy.city_id %></p>
-				<%= image_tag toy.image.url(:medium) %>
-				<button class="toy-contact">Send <%= toy.user.f_name %> a message</button>
-			</div>
-			<hr>
+				<div class="row">
+					<div class="col m4 toy-image">
+						<%= image_tag toy.image.url(:medium) %>
+					</div>
+					<div class="col m7 offset-m1 toy-details">
+						<h4 class="toy-city"><%= link_to "#{toy.name}", toy_path(toy) %></h4>
+						<p class="toy-desc"><%= toy.description %></p>
+						<p class="toy-age"><%= toy.age_range %></p>
+						<p class="toy-gender"><%= toy.gender %></p>
+						<!-- add toy city -->
+						<button class="toy-contact">Send <%= toy.user.f_name %> a message</button>
+						<br>
+						<% if current_user.id == toy.user_id %>
+							<%= link_to "Edit Toy", edit_toy_path(toy) %>
+							<%= link_to "Remove Toy", toy_path(toy), method: :delete %>
+						<% end %>
+					</div>
+				</div>
+				<hr>
 			<% end %>
 		</div>
 	</div>

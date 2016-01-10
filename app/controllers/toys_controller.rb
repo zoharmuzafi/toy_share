@@ -1,8 +1,7 @@
 class ToysController < ApplicationController
+  before_filter :get_toy, except: [:index, :new, :create]
+  before_filter :toy_params, only: [:create, :update]
   
-  # Find toy ID on page load
-  before_filter :toy_params, except: [:index, :new, :create]
-
   def index
     @toys = Toy.all
     @cities = City.all
@@ -13,7 +12,11 @@ class ToysController < ApplicationController
   end
 
   def new
-    @toy = Toy.new
+    if current_user
+      @toy = Toy.new
+    else
+      redirect_to login_path
+    end
   end
 
   def create
@@ -28,16 +31,17 @@ class ToysController < ApplicationController
   end
 
   def show
-    @toy = Toy.find_by_id(params[:id])
+    
   end
 
   def edit
-    @toy = Toy.find_by_id(params[:id])
+    unless current_user.id == @toy.user_id 
+      redirect_to login_path
+    end
   end
 
   def update
-    @toy.update_attributes(toy_params)
-    if @toy.save
+    if @toy.update_attributes(toy_params)
       flash[:notice] = "You have successfully altered #{@toy.name}"
       redirect_to user_path(current_user)
     else
@@ -60,7 +64,12 @@ class ToysController < ApplicationController
   private 
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :gender, :age_range, :image, :user_id, :city_id,  :available )
+    params.require(:toy).permit(:name, :description, :gender, :age_range, :image, :user_id, :city_id, :available )
+  end
+
+  def get_toy
+    toy_id = params[:id]
+    @toy = Toy.find_by_id(toy_id)
   end
 
 
