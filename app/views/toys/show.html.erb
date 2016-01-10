@@ -25,6 +25,18 @@
 				<% else %>
 					<%= link_to "Please login to send a message to the toy owner", login_path, class: "btn waves-effect waves-light" %>
 				<% end %>
+				<!-- Modal Trigger -->
+		  			<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
+					  <!-- Modal Structure -->
+					  <div id="modal1" class="modal modal-fixed-footer">
+					    <div class="modal-content">
+					      <%= form_for :message, :url => messages_path do |f| %>	
+									<%= f.text_field :content %>
+									<%= f.hidden_field :user_id, :value => @toy.user_id %> 
+									<%= f.submit "Send" %>					
+								<% end %>
+					    </div>
+					  </div>
 			</div>
 		</div>
 	</div>	
