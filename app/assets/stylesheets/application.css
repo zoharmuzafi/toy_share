@@ -14,3 +14,7 @@
  *= require materialize
  *= require_self
  */
+ #chat{
+ 	background-color: gray;
+ 	margin-bottom: 10px;
+ }

@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 	  		chat.messages << new_message
 	  	end
 	  	flash[:notice] = "Message was sent"
-	  	redirect_to toys_path
+	  	redirect_to chats_path
 	  else
 	  	flash[:error] = "Message wasn't sent"
   		redirect_to new_message_path
