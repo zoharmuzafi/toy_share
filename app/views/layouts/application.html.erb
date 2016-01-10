@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ToyShare</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= csrf_meta_tags %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Toy Bin</title>
+    <link href="welcome.scss" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Patrick+Hand' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  	<%= csrf_meta_tags %>
 </head>
-<body>
+<body id="top" class="scrollspy">
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="main_nav" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+            <%= link_to "Toy Bin", root_path, class: "brand-logo" %>
+                <ul class="right hide-on-med-and-down">
+                    <li><%= link_to "Login", login_path, class: "nav-links" %></li>
+                    <li><%= link_to "Sign-Up", signup_path, class: "nav-links" %></li>
+                    <li><%= link_to "Featured Toys", toys_path, class: "nav-links"%></li>
+                   
+  					<li><a href="#the_team" class: "page-scroll" id="the_team" %><%= "The Team" %></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
 
 	<%= yield %>
 
