@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 ###### DELETE THIS LINE AND BELOW ##########
 toys = Toy.create([
-										{ name: "Legos", description: "Star Wars legos set", gender: "Male", age_range: "0-3", user_id: 1, city_id: 1 },
-										{ name: "Barbies", description: "Barbie doll", gender: "Female", age_range: "6-9", user_id: 1, city_id: 1 }
+										{ name: "Star Wars lego set", description: "This is a lego set of an Imperial Star Destroyer that was used by my son.  All the pieces are included in the set.", gender: "Male", age_range: "0 to 3 years", user_id: 1, city_id: 1, image: "http://i.imgur.com/wRcQp4P.jpg" },
+										{ name: "Barbie Doll", description: "I am giving away a gently used Barbie ballerina that my daughter does not use anymore.  It only comes with what you see in the picture, no other accessories.", gender: "Female", age_range: "6 to 9 years", user_id: 1, city_id: 1, image: "http://i.imgur.com/fbebYos.jpg" }
 									])
 
 cities = City.create ([{name: "San Francisco"}, {name: "Lafayette"}])

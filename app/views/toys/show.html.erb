@@ -1,19 +1,31 @@
-<div class="container">
+<div class="toy-container container">
 	<div class="row">
-		<div class="col m12">
-			<div class="toy-images">
-				<p>Image carousel here in a large div </p>
+		<div class="right-align">
+			<%= link_to "Back to all toys", toys_path, class: "btn waves-effect waves-light" %>
+		</div>
+		<div class="toy-title">
+			<h2 class="toy-name center col m12"><%= @toy.name %></h2>
+		</div>
+		<div class="row">
+			<div class="col m4 toy-image responsive-img">
+				<%= image_tag @toy.image.url(:medium) %>
+			</div>
+			<div class="toy-details">
+				<p class="toy-desc"><strong>Description:</strong> <%= @toy.description %></p>
+				<p class="toy-age"><strong>Reccommended age range:</strong> <%= @toy.age_range %></p>
+				<p class="toy-gender"><%= @toy.gender %></p>
+				<p class="toy-city"><strong>Location:</strong> <%= @toy.city.name %></p>
+			</div>
+			<div class="toy-owner">
+				<% if current_user %>
+					<% if current_user.id == @toy.user_id %>
+						<%= link_to "Edit Toy", edit_toy_path(@toy) %>
+						<%= link_to "Remove Toy", toy_path(@toy), method: :delete %>
+					<% end %>
+				<% else %>
+					<%= link_to "Please login to send a message to the toy owner", login_path, class: "btn waves-effect waves-light" %>
+				<% end %>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="toy-info">
-			<h2 class="toy-name center"><%= @toy.name %></h2>
-			<p class="toy-desc"><%= @toy.description %></p>
-			<p class="toy-age"><%= @toy.age_range %></p>
-			<p class="toy-gender"><%= @toy.gender %></p>
-			<p class="toy-city"><%= @toy.city.name %></p>
-			<button class="toy-contact">Send <%= @toy.user.f_name %> a message</button>
-		</div>	
-	</div>
+	</div>	
 </div>

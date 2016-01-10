@@ -3,16 +3,16 @@
 		<div class="col m8">
 			<h1>Login</h1>
 			<%= form_tag '/login' do %>
-			<div class="input-group">
+			<div class="input-field">
 				<%= label_tag(:email) %>
 				<%= email_field_tag :email %>
 			</div>
-			<div class="input-group">
+			<div class="input-field">
  				<%= label_tag(:password) %>
  				<%= password_field_tag :password %>
 			</div>
-			<div class="input-group">
- 				<%= submit_tag "Submit" %>
+			<div class="input-field">
+ 				<%= submit_tag "Submit", class: "btn waves-effect waves-light" %>
 			</div>
 			<% end %>	
 		</div>
