@@ -1,7 +1,8 @@
-<div class="container">
-	<div class="row">
-		<div class="col m8">
+<%= render 'loginpage' %>
+<div class="center-align">
+		<div class="col m8" id="login">
 			<h1>Login</h1>
+			<br><br>
 			<%= form_for :user, url: "/sessions", method: :post do |f| %>
 				<div class="input-group">
 					<%= f.label :email %>
@@ -12,9 +13,8 @@
 					<%= f.password_field :password %>
 				</div>
 				<div class="input-group">
-					<%= f.submit "Login" %>
+					<%= f.submit "Submit" %>
 				</div>
 			<% end %>			
 		</div>
 	</div>
-</div>
