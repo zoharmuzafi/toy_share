@@ -10,40 +10,62 @@
 				<p>Filter toys by:</p>
 				<%= form_tag '', method: :get do %>
 					<div class="input-group">
-							<%= select_tag :age_range, options_for_select([ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), prompt: "Age Range" %>
+						<%= label_tag :age_range %>
+						<% if params[:age_range].blank? %>
+						<%= select_tag :age_range, options_for_select([ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), prompt: "Age Range" %>
+						<% else %>
+						<%= select_tag :age_range, options_for_select([ ["All Ages", nil], "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), value: "#{params[:age_range]}" %>
+						<% end %>
 					</div>
 					<div class="input-group">
-						<%= select_tag :gender, options_for_select([ "Both", "Male", "Female" ]), prompt: "Gender" %>
+						<%= label_tag :gender %>
+						<% if params[:gender].blank? %>
+							<%= select_tag :gender, options_for_select([ "Male", "Female" ]), prompt: "Both" %>
+						<% else %>
+							<%= select_tag :gender, options_for_select([ ["Both", nil], "Male", "Female" ]), value: "#{params[:gender]}" %>
+						<% end %>
 					</div>
 					<div class="input-group">
-						<%= select_tag :name, options_for_select(@cities.collect { |city| city.name }), prompt: "City" %>
+						<%= label_tag :name, "City" %>
+						<% if params[:name].blank? %>
+							<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), prompt: "City" %>
+						<% else %>
+							<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), value: "#{params[:name]}", include_blank:"All Cities" %>
+						<% end %>
 					</div>
 					<div class="input-group">
-						<%= submit_tag "Submit", class: "btn waves-effect waves-light" %>
+						<%= submit_tag "Filter", name: nil, class: "btn waves-effect waves-light toys-button" %>
 					</div>
 				<% end %>
+				<div class="clear-search">
+					<%= link_to "Reset", toys_path, class: "btn waves-effect waves-light toys-button" %>
+				</div>
 			</div>
 		</div>
 		<div class="col s12 m10">
-		<% (Toy.all).in_groups_of(3, false).each do |group| %>
-				<div class="row">
-					<% group.each do |toy| %>
-						<div class="col s12 m4">
-							<div class="card z-depth-2">
-								<div class="card-image">
-									<%= image_tag toy.image.url(:large), class: "toys-image responsive-img" %>
-								</div>
-								<div class="card-content">
-									<p class="toy-city"><%= link_to "#{toy.name}", toy_path(toy) %></p>
-									<p class="toy-desc"><%= toy.description %></p>
-								</div>
-								<div class="card-action">
-									<%= link_to "See toy details", toy_path(toy) %>
+		<% if @toys.any? %>
+			<% (@toys).in_groups_of(3, false).each do |group| %>
+					<div class="row">
+						<% group.each do |toy| %>
+							<div class="col s12 m4">
+								<div class="card z-depth-2">
+									<div class="card-image">
+										<%= image_tag toy.image.url(:large), class: "toys-image responsive-img" %>
+									</div>
+									<div class="card-content">
+										<p class="toy-city"><%= link_to "#{toy.name}", toy_path(toy) %></p>
+										<p class="toy-desc"><%= toy.description %></p>
+									</div>
+									<div class="card-action">
+										<%= link_to "See toy details", toy_path(toy) %>
+									</div>
 								</div>
 							</div>
-						</div>
-					<% end %>
-				</div>
+						<% end %>
+					</div>
+			<% end %>
+		<% else %>
+			<h2>Sorry, there are no toys matching your search filter(s).</h2>
 		<% end %>
 	</div>
 </div>
