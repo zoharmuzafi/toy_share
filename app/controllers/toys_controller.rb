@@ -3,12 +3,11 @@ class ToysController < ApplicationController
   before_filter :toy_params, only: [:create]
   
   def index
-    @toys = Toy.all
     @cities = City.all
-  end
-
-  def filter_toys
-    
+    @toys = Toy.where(nil)
+    filter_toys(params).each do |key, value|
+      @toys = @toys.public_send(key, value) if value.present?
+    end
   end
 
   def new
@@ -73,6 +72,8 @@ class ToysController < ApplicationController
     @toy = Toy.find_by_id(toy_id)
   end
 
+  def filter_toys(params)
+    params.slice(:gender, :city, :age_range)
+  end
 
-  
 end
