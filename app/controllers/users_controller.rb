@@ -21,6 +21,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
 
   def show
     @user = User.find(params[:id])
+    @toys = @user.toys.paginate(:page => params[:page], :per_page => 6)
   end
 
   def edit
