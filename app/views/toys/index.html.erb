@@ -11,15 +11,15 @@
 				<%= form_tag '', method: :get do %>
 					<div class="input-group">
 						<%= label_tag :age_range %>
-						<% if params[:age_range].nil? %>
+						<% if params[:age_range].blank? %>
 						<%= select_tag :age_range, options_for_select([ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), prompt: "Age Range" %>
 						<% else %>
-						<%= select_tag :age_range, options_for_select([ "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), value: "#{params[:age_range]}" %>
+						<%= select_tag :age_range, options_for_select([ ["All Ages", nil], "0 to 1 year", "1 to 3 years", "3 to 5 years", "5 to 7 years", "7 to 9 years", "9 to 12 years", "12 years and up" ]), value: "#{params[:age_range]}" %>
 						<% end %>
 					</div>
 					<div class="input-group">
 						<%= label_tag :gender %>
-						<% if params[:gender].nil? %>
+						<% if params[:gender].blank? %>
 							<%= select_tag :gender, options_for_select([ "Male", "Female" ]), prompt: "Both" %>
 						<% else %>
 							<%= select_tag :gender, options_for_select([ ["Both", nil], "Male", "Female" ]), value: "#{params[:gender]}" %>
@@ -27,10 +27,10 @@
 					</div>
 					<div class="input-group">
 						<%= label_tag :name, "City" %>
-						<% if params[:name].nil? %>
+						<% if params[:name].blank? %>
 							<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), prompt: "City" %>
 						<% else %>
-							<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), prompt: "#{params[:name]}" %>
+							<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), value: "#{params[:name]}", include_blank:"All Cities" %>
 						<% end %>
 					</div>
 					<div class="input-group">
