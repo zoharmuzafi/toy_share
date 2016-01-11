@@ -18,6 +18,9 @@
             <%= link_to "Toy Bin", root_path, class: "brand-logo" %>
                 <ul class="right hide-on-med-and-down">
                     <li><%= link_to "Login", login_path, class: "nav-links" %></li>
+                    <% if login_path %>
+
+                    <% end  %> 
                     <li><%= link_to "Sign-Up", signup_path, class: "nav-links" %></li>
                     <li><%= link_to "Featured Toys", toys_path, class: "nav-links"%></li>
                    

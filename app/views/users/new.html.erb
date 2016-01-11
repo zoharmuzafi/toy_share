@@ -1,30 +1,33 @@
-<h1>Sign Up</h1>
-
-<%= form_for :user, url: '/users', html: { multipart: true } do |f| %>
-<div class="input-field">
-First Name:
-    <%= f.text_field :f_name, autofocus: true, placeholder: "First Name" %>
-</div>
-<div class="input-field">
-Last Name:
-    <%= f.text_area :l_name, placeholder: "Last Name" %>
-</div>
-<div class="input-field">
-Email:
-    <%= f.text_area :email, placeholder: "Email" %>
-</div>
-<div class="input-field">
-Password:
-    <%= f.password_field :password%>
-</div>
-<div class="input-field">
-Bio:
-    <%= f.text_area :bio, placeholder: "Tell us about yourself" %>
-</div>
-<div class="input-field">
-    <%= f.file_field :avatar %>
-</div>
-</br>
+<div class="center-align">
+	<div class="col m8" id="signup">
+	<h1>Sign Up</h1>
+	<br>
+	<%= form_for :user, url: '/users', html: { multipart: true } do |f| %>
+	<div class="input-group">
+		<%= f.label :first_name %>
+		<%= f.text_field :f_name, autofocus: true %>
+	</div>	
+	<div class="input-group">
+		<%= f.label :last_name %>
+		<%= f.text_field :l_name, autofocus: true %>
+	</div>
+	<div class="input-group">
+		<%= f.label :email %>
+		<%= f.text_field :email, autofocus: true %>
+	</div>
+	<div class="input-group">
+	<%= f.label :password %>
+	<%= f.text_field :password, autofocus: true %>
+	</div>
+	<div class="input-group">
+	<%= f.label :bio %>
+	<%= f.text_area :password, autofocus: true, placeholder: "Tell us about yourself" %>
+	</div>
+	<div class="input-field">
+	Profile Photo:
+	    <%= f.file_field :avatar %>
+	</div>
+	</br>
 <div class="input-field">
     <%= f.submit "Submit" %>
 </div>

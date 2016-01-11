@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user_email, #user_password {
-	align: center;
+#signup {
+	padding-top: 45px;
+}
+
+#user_f_name, #user_l_name, #user_bio{
+	width: 40%;
+	font-size: 30px;
 }
