@@ -15,11 +15,11 @@
 					</div>
 					<div class="input-group">
 						<%= label_tag :gender %>
-						<%= select_tag :gender, options_for_select([ "Both", "Male", "Female" ]) %>
+						<%= select_tag :gender, options_for_select([ ["Both", nil], "Male", "Female" ]), prompt: "Gender" %>
 					</div>
 					<div class="input-group">
 						<%= label_tag :name, "City" %>
-						<%= select_tag :name, options_for_select(@cities.uniq.pluck(:name)), prompt: "City" %>
+						<%= select_tag :name, options_for_select(City.uniq.pluck(:name)), prompt: "City" %>
 					</div>
 					<div class="input-group">
 						<%= submit_tag "Filter", name: nil, class: "btn waves-effect waves-light toys-button" %>

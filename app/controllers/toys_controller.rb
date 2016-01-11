@@ -3,10 +3,15 @@ class ToysController < ApplicationController
   before_filter :toy_params, only: [:create]
   
   def index
-    @cities = City.all
-    @toys = Toy.where(nil)
-    filter_toys(params).each do |key, value|
-      @toys = @toys.public_send(key, value) if value.present?
+    if params[:name].present?
+      @cities = City.find_by_name(params[:name])
+      @toys = Toy.where(city_id: @cities.id)
+      filter_toys(params).each do |key, value|
+        @toys = @toys.public_send(key, value) if value.present?
+      end
+    else
+      @cities = City.all
+      @toys = Toy.all
     end
   end
 
