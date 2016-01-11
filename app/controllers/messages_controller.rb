@@ -22,10 +22,10 @@ class MessagesController < ApplicationController
 	  		recipient.chats << chat
 	  		chat.messages << new_message
 	  	end
-	  	flash[:notice] = "Message was sent"
+	  	flash[:notice] = "Your message was sent to #{recipient.f_name}"
 	  	redirect_to chats_path
 	  else
-	  	flash[:error] = "Message wasn't sent"
+	  	flash[:error] = "Your message wasn't sent"
   		redirect_to new_message_path
 	  end
 	end
