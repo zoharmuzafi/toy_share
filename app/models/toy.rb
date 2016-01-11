@@ -8,8 +8,7 @@ class Toy < ActiveRecord::Base
 	validates :name, presence: true
 	validates :description, presence: true
 
-	scope :gender, -> (gender) { where gender: gender }
-	scope :age_range, -> (age_range) { where age_range: age_range }
-	scope :city, -> (city) { where city: city }
+	scope :by_gender, -> (gender) { where("gender = ? OR gender = 'Both'", gender) if gender.present? }
+	scope :by_age_range, -> age_range { where(age_range: age_range) if age_range.present? }
 
 end
