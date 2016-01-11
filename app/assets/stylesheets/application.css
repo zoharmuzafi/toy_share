@@ -18,3 +18,10 @@
  	background-color: gray;
  	margin-bottom: 10px;
  }
+ .pagination a.active {
+  color: #fff;
+}
+ .pagination a {
+  color: #757575;
+  text-decoration: none;
+}
