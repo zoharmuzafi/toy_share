@@ -57,3 +57,6 @@ group :development do
   gem 'ffaker'
 end
 
+group :production do
+	gem 'rails_12factor'
+end
