@@ -1,0 +1,11 @@
+example_id                                       | status | run_time        |
+------------------------------------------------ | ------ | --------------- |
+./spec/requests/custom_routes_spec.rb[1:2]       | passed | 0.00107 seconds |
+./spec/requests/custom_routes_spec.rb[1:4]       | passed | 0.00088 seconds |
+./spec/requests/custom_routes_spec.rb[1:6]       | passed | 0.00089 seconds |
+./spec/requests/custom_routes_spec.rb[1:8]       | passed | 0.00161 seconds |
+./spec/requests/custom_routes_spec.rb[1:10]      | passed | 0.00081 seconds |
+./spec/requests/custom_routes_spec.rb[1:12]      | passed | 0.00089 seconds |
+./spec/requests/custom_routes_spec.rb[1:14]      | passed | 0.00142 seconds |
+./spec/requests/custom_routes_spec.rb[1:16]      | passed | 0.00105 seconds |
+./spec/requests/visitor_signs_ups_spec.rb[1:1:1] | failed | 0.03889 seconds |

@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-# VIEW TESTING 
+# TESTING VIEWS 
+
 # testing - should render the login view 
 RSpec.describe "CustomRoutes", type: :request do
   describe "#login" do
     before do
       get :login
     end
-   end 
+  end 
     it "should route to the login page" do	
     end
 
