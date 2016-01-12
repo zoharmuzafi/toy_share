@@ -12,18 +12,17 @@
 			<% if @toys.any? %>
 			<% @toys.each do |toy| %>
   			<div class="col s12 m4">
-  				<div class="welcome-card card z-depth-1">
+  				<div class="card z-depth-2">
     				<div class="card-image">
-    				<%= image_tag("#{toy.image.url(:large)}", class: "recent-toys") %>
+    				<%= image_tag toy.image.url(:large), class: "toys-image responsive-img" %>
     				</div>
-    				<div class="card-content">
+    				<div class="card-action">
 		          <p><%= link_to "#{toy.name}", toy_path(toy) %></p>
     				</div>
   				</div>
   			</div>
-  			<% end %>
   		<% end %>
-			</div>
+  		<% end %>
 		</div>
 	</div>
 </div>
