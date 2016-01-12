@@ -10,31 +10,4 @@ RSpec.describe User, type: :model do
     @user = User.create(user_params)
   end
 
-  # describe "#full_name" do
-  #   it "joins first name and last name" do
-  #     expect(@user.full_name).to eq("#{@user.first_name} #{@user.last_name}")
-  #   end
-  # end
-
-  # describe "#generate_username" do
-  #   before do
-  #       @username = @user.generate_username
-  #   end
-
-  #   it "includes the first initial in lower case" do
-  #     expect(@username).to include(@user.last_name.downcase)
-  #   end
-
-  #   it "includes the last name in lower case" do
-  #     expect(@username).to include(@user.first_name[0].downcase)
-  #   end
-
-  #   it "combines first initial, last name, and a 2-digit number" do
-  #     letterpart = "#{@user.first_name[0]}#{@user.last_name}".downcase
-  #     # test format of username with regexp
-  #     expect(@username).to match(/\A#{letterpart}\d{2}\z/)
-  #   end
-  # end
-
-
 end
