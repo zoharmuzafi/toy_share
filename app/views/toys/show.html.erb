@@ -25,17 +25,17 @@
 						<%= link_to "Send #{(User.find(@toy.user_id)).f_name} a private message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
 					<% end %>		
 				<% else %>
-							<button class="btn waves-effect waves-light" ><%= link_to "Want this toy? please log in", login_path %></button>
+							<%= link_to "Want this toy? please log in", "#modal2", :class => "waves-effect waves-light btn modal-trigger" %>
 					<% end %>
 			
 				<!-- Modal Trigger -->
-					  <!-- Modal Structure -->
-					  <div id="modal1" class="modal modal-fixed-footer">
+					  <!-- Modal New message-->
+					  <div id="modal1" class="modal modal-fixed-footer modalMessage">
 					    <div class="modal-content">
 
 						    <div class="row">
 						    	<div class="col m6 offset-m3 s6 offset-s3 center-align">
-						    		<h5><%= "Send #{(User.find(@toy.user_id)).f_name} a private message" %></h1>
+						    		<h5><%= "Send #{(User.find(@toy.user_id)).f_name} a private message" %></h5>
 						    	</div>
 						    </div>
 						    <div class="row">
