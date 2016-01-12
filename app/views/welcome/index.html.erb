@@ -30,10 +30,23 @@
 </div>
 <div class="row">
 	<div class="added-toys">
-		<h1 class="center">Recently Added Toys</h1>
-	<div class="col m4"></div>
-	<div class="col m4"></div>
-	<div class="col m4"></div>
+		<h1 class="recent-toy-title center">Recently Added Toys</h1>
+		<div class="col m10 offset-m1">
+			<% if @toys.any? %>
+				<% @toys.each do |toy| %>
+					<div class="col s12 m4">
+						<div class="toy-card z-depth-2">
+							<div class="card-image center">
+								<%= image_tag toy.image.url(:large), class: "toy-image" %>
+							</div>
+							<div class="card-text center">
+							<div class="divider"></div>
+				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
+			  			</div>
+						</div>
+					</div>
+				<% end %>
+				<% end %>
+		</div>
 </div>
-	
 </div>

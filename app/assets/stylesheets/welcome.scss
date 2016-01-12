@@ -42,7 +42,25 @@ body > div.row > div > ul.indicators {
 	font-size: 30px;
 	text-shadow: 2px 2px 2px #141414;
 }
-
-.added-toys {
-	background-color: #FF9F1F;
+.recent-toy-title {
+	color: #000000;
 }
+.added-toys {
+	padding-top: 20px;
+	
+}
+
+.toy-card {
+	border-radius: 40px;
+	height: 400px;
+	margin: 0 10px;
+}
+.card-image {
+	height: 350px;
+}
+.toy-image {
+	max-height: 100%;
+	max-width: 100%;
+	border-radius: 40px 40px 0 0;
+}
+
