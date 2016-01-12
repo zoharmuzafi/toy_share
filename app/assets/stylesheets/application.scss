@@ -15,8 +15,6 @@
  *= require_self
  */
 
-@import 'welcome';
-
  #chat{
  	background-color: gray;
  	margin-bottom: 10px;
@@ -29,6 +27,9 @@
   text-decoration: none;
 }
 
+textarea{
+	height: 10rem;
+}
 a {
 	color: #FFFFFF;
 }

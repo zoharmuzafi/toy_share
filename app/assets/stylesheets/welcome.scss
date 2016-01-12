@@ -13,8 +13,12 @@ background-color: #FFFFFD;
 	background-size: contain;
 	border-radius: 5px;
 
-
 	a {
 		color: #2B98ED;
 	}
+}
+
+.toy-image {
+  max-height: 300px;
+  max-width: 100%;
 }
