@@ -12,26 +12,6 @@ class ToysController < ApplicationController
     end
   end
 
-  # working index
-  # def index
-  #   @cities = City.all
-  #   @toys = Toy.all
-  #   params.delete_if { |k,v| v.blank? }
-  #   if params[:name].present?
-  #     @cities = City.find_by_name(params[:name])
-  #     @toys = Toy.where(city_id: @cities.id)
-  #     filter_toys(params).each do |key, value|   
-  #       @toys = @toys.public_send(key, value) if value.present?
-  #     end
-  #   elsif (params[:gender] || params[:age_range]).present?
-  #     @cities = City.all
-  #     filter_toys(params).each do |key, value|
-  #       @toys = @toys.public_send(key, value) if value.present?
-  #     end
-  #   end
-  # end
-  # end working index
-
   def new
     if current_user
       @toy = Toy.new
@@ -94,8 +74,5 @@ class ToysController < ApplicationController
     @toy = Toy.find_by_id(toy_id)
   end
 
-  # def filter_toys(params)
-  #   params.slice(:gender, :city, :age_range)
-  # end
 
 end

@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
 	  	flash[:notice] = "Your message was sent to #{recipient.f_name}"
 	  	redirect_to chats_path
 	  else
-	  	flash[:error] = "Your message wasn't sent"
+	  	flash[:error] = new_message.full_messages.join(", ")
   		redirect_to new_message_path
 	  end
 	end
@@ -29,7 +29,10 @@ class MessagesController < ApplicationController
   def destroy
   	message_id = params[:id]
   	message = Message.find(message_id)
-  	message.destroy
+  	if message.destroy
+  		flash[:notice] = "Your message was deleted"
+  	else
+  	flash[:error] = new_message.full_messages.join(", ")
   	redirect_to chats_path
   end
 end
