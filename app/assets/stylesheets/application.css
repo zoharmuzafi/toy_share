@@ -14,6 +14,27 @@
  *= require materialize
  *= require_self
  */
+
+.nav-bar {
+	background-color: #FF9F1F;
+}
+	
+.btn {
+	background-color: #2B98ED;
+}
+.btn:hover {
+	background-color: #2DA0FA;	
+}
+.btn:focus {
+	background-color: #2DA0FA;	
+}
+.btn:visited {
+	background-color: #2DA0FA;	
+}
+
+body > div.row > div > ul.slides > li.active > div > button > a {
+	color: #FFFFFF;
+}
  #chat{
  	background-color: gray;
  	margin-bottom: 10px;

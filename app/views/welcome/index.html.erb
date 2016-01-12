@@ -1,2 +1,39 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="row">
+	<div class="slider">
+		<ul class="slides">
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("stuffed-animal.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Get a toy!</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Find toys looking for a new home.</h5>
+				 	<%= link_to "Find Toys", toys_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("girl-mlp.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Give a toy!</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Give away your unused toys.</h5>
+				 	<%= link_to "Get Started", signup_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("action-figure.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Sign up now</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Create an account to begin helping others</h5>
+				 	<%= link_to "Get Started", signup_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="added-toys">
+		<h1 class="center">Recently Added Toys</h1>
+	<div class="col m4"></div>
+	<div class="col m4"></div>
+	<div class="col m4"></div>
+</div>
+	
+</div>
