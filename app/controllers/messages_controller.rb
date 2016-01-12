@@ -36,3 +36,4 @@ class MessagesController < ApplicationController
   	redirect_to chats_path
   end
 end
+end
