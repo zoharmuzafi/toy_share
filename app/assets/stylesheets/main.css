@@ -1,0 +1,35 @@
+#chat{
+ 	background-color: gray;
+ 	margin-bottom: 10px;
+ }
+ .pagination a.active {
+  color: #fff;
+}
+ .pagination a {
+  color: #757575;
+  text-decoration: none;
+}
+
+textarea{
+	height: 10rem;
+
+a {
+	color: #FFFFFF;
+
+}
+.modalLogIn{
+	width: 33% !important;
+	height: 60% !important;
+	color: red !important;
+}
+.modalSignUp{
+	width: 33% !important;
+	height: 60% !important;
+}
+.fa {
+  font-size: 120% !important;
+}
+.btn-f {
+  background-color: #3B5998 !important;
+  color: white !important;
+}
