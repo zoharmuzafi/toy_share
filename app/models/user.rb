@@ -38,5 +38,14 @@ class User < ActiveRecord::Base
             # bio: "To Edit Bio, Edit Your Profile"
         )
     end
+
+    def full_name
+    "#{first_name} #{last_name}"
+    end
+ 
+    def generate_username
+    "#{first_name[0].downcase}#{last_name.downcase}#{rand(10..99)}"
+    end
+
 end
 
