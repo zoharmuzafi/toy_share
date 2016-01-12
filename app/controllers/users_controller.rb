@@ -14,7 +14,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      flash[:notice] = @user.errors.map{|k,v| "#{k} #{v}".capitalize}
+      flash[:error] = @user.error.full_messages.join(", ")
       redirect_to '/signup'
     end
   end
@@ -33,8 +33,9 @@ before_filter :authorize, only: [:edit, :update, :destroy]
   user_params = params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio)
   if @user.update_attributes(user_params)
     redirect_to user_path(@user)
+    flash[:notice] = "Your profile was updated!"
   else 
-    flash[:notice] = @user.errors.map{|k,v| "#{k} #{v}".capitalize}
+    flash[:error] = @user.error.full_messages.join(", ")
     redirect_to edit_user_path
   end
   end

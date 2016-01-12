@@ -1,7 +1,7 @@
 <div class="toy-container container">
 	<div class="row">
 		<div class="right-align">
-			<%= link_to "Back to all toys", toys_path, class: "btn waves-effect waves-light" %>
+			<button class="btn waves-effect waves-light"><%= link_to "Back to all toys", toys_path %></button>
 		</div>
 		<div class="toy-title">
 			<h2 class="toy-name center col m12"><%= @toy.name %></h2>
@@ -19,21 +19,23 @@
 			<div class="toy-owner">
 				<% if current_user %>
 					<% if current_user.id == @toy.user_id %>
-						<%= link_to "Edit Toy", edit_toy_path(@toy) %>
-						<%= link_to "Remove Toy", toy_path(@toy), method: :delete %>
+						<button class="btn waves-effect waves-light"><%= link_to "Edit Toy", edit_toy_path(@toy) %></button>
+						<button class="btn waves-effect waves-light" ><%= link_to "Remove Toy", toy_path(@toy), method: :delete %></button>
 					<% else %>
-						<%= link_to "Send #{current_user.f_name} a private message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
-					<% end %>
+						<%= link_to "Send #{(User.find(@toy.user_id)).f_name} a private message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
+					<% end %>		
 				<% else %>
-						<%= link_to "Please login to send a message to the toy owner", login_path, class: "btn waves-effect waves-light" %>
-				<% end %>
+							<button class="btn waves-effect waves-light" ><%= link_to "Want this toy? please log in", login_path %></button>
+					<% end %>
+			
 				<!-- Modal Trigger -->
 					  <!-- Modal Structure -->
 					  <div id="modal1" class="modal modal-fixed-footer">
 					    <div class="modal-content">
+
 						    <div class="row">
 						    	<div class="col m6 offset-m3 s6 offset-s3 center-align">
-						    		<h5><%= "Send #{current_user.f_name} a private message" %></h1>
+						    		<h5><%= "Send #{(User.find(@toy.user_id)).f_name} a private message" %></h1>
 						    	</div>
 						    </div>
 						    <div class="row">
@@ -44,6 +46,7 @@
 										</div>
 										<div class="input-field center-align">
 											<%= f.hidden_field :user_id, :value => @toy.user_id %> 
+											<%= f.hidden_field :toy_id, :value => @toy.id %>
 											<%= f.submit "Send", class: "btn" %>			
 										</div>		
 										<% end %>

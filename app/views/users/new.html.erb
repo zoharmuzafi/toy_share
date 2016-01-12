@@ -1,34 +1,37 @@
+<div class="row">
+  <h1>Sign Up</h1>
+  <div class="col s6 offset-s3 z-depth-2">
+    <%= link_to "/auth/facebook", class:"btn btn-block btn-f" do %><i class="fa fa-facebook-official"></i>&nbsp&nbsp Connect with Facebook<% end %>
+    <%= form_for :user, url: '/users', html: { multipart: true } do |f| %>
+      <div class="input-field">
+        <%= f.text_field :f_name, autofocus: true%>
+        <%= f.label :f_name, "First Name" %>
+      </div>
+      <div class="input-field">
+        <%= f.text_field :l_name %>
+        <%= f.label :l_name, "Last Name" %>
+      </div>
+      <div class="input-field">
+        <%= f.text_field :email %>
+        <%= f.label :email, "Email" %>
+      </div>
+      <div class="input-field">
+        <%= f.password_field :password%>
+        <%= f.label :password, "Password" %>
+      </div>
+      <div class="input-field">
+        <%= f.text_field :bio %>
+        <%= f.label :bio, "Tell us about yourself." %>
+      </div>
+      <div class="input-field">
+        <%= f.file_field :avatar %>
+      </div>  
+      </br>
+      <div class="input-field">
+        <button class="btn waves-effect waves-light toys-button"><%= f.submit "Submit" %></button>
+      </div>
+      </br>
+    <% end %>
 
-<h1>Sign Up</h1>
- <div class="row">
- <div class="col s6 offset-s3 z-depth-2">
-<%= form_for :user, url: '/users', html: { multipart: true } do |f| %>
-<div class="input-field">
-    <%= f.text_field :f_name, autofocus: true%>
-    <%= f.label :f_name, "First Name" %>
-</div>
-<div class="input-field">
-    <%= f.text_field :l_name %>
-    <%= f.label :l_name, "Last Name" %>
-</div>
-<div class="input-field">
-    <%= f.text_field :email %>
-    <%= f.label :email, "Email" %>
-</div>
-<div class="input-field">
-    <%= f.password_field :password%>
-    <%= f.label :password, "Password" %>
-</div>
-<div class="input-field">
-    <%= f.text_field :bio %>
-    <%= f.label :bio, "Tell us about yourself." %>
-</div>
-    <%= f.file_field :avatar %>
-</br>
-<div class="input-field">
-    <%= f.submit "Submit", class: "btn waves-effect waves-light" %>
-</div>
-</br>
-<% end %>
-</div>
+  </div>
 </div>

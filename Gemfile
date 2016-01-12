@@ -40,9 +40,12 @@ gem 'will_paginate', '~> 3.1'
 
 gem 'will_paginate-materialize'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -51,5 +54,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'ffaker'
+end
+
+group :production do
+	gem 'rails_12factor'
 end
 
