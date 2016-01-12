@@ -14,11 +14,13 @@ class MessagesController < ApplicationController
 	  	else
 	  		recipient = User.find(recipient_id)
 	  		chat = Chat.create
+	  		toy = Toy.find(params.require(:message).permit(:toy_id)["toy_id"])
+	  		toy.chats << chat
 	  		current_user.chats  << chat
 	  		recipient.chats << chat
 	  		chat.messages << new_message
 	  	end
-	  	flash[:notice] = "Your message was sent to #{recipient.f_name}"
+	  	flash[:notice] = "Your message was sent"
 	  	redirect_to chats_path
 	  else
 	  	flash[:error] = new_message.full_messages.join(", ")
