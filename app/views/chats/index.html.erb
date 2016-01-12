@@ -13,7 +13,9 @@
 					<div class="col m10 s10 offset-m1 offset-s1 left-align">
 						<% message_owner = User.find(message.user_id) %>
 						<% if message_owner.id != current_user.id %>
-							<%= "#{message_owner.f_name} #{message_owner.l_name}: #{message.content}" %>
+							<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
+							<%= "#{message.content}" %>
+							
 						<% else %>
 							<%= "you: #{message.content}" %>
 						<% end %>
