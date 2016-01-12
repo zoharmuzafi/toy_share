@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: 'signup'
   get '/logout', to: 'sessions#destroy', as: 'logout'
   post '/login', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create_with_omniauth'
 
   resources :messages, only: [:create, :new, :destroy]
   resources :chats, only: [:index, :create, :destroy]
