@@ -21,12 +21,13 @@
 					<% if current_user.id == @toy.user_id %>
 						<%= link_to "Edit Toy", edit_toy_path(@toy) %>
 						<%= link_to "Remove Toy", toy_path(@toy), method: :delete %>
-						<% else %>
-							<%= link_to "Please login to send a message to the toy owner", login_path, class: "btn waves-effect waves-light" %>
-						<% end %>
+					<% else %>
+						<%= link_to "Send #{current_user.f_name} a private message", "#modal1" %>
 					<% end %>
+				<% else %>
+						<%= link_to "Please login to send a message to the toy owner", login_path, class: "btn waves-effect waves-light" %>
+				<% end %>
 				<!-- Modal Trigger -->
-		  			<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
 					  <!-- Modal Structure -->
 					  <div id="modal1" class="modal modal-fixed-footer">
 					    <div class="modal-content">
