@@ -32,7 +32,7 @@ class ToysController < ApplicationController
   end
 
   def show
-  
+    @toy_show = true
   end
 
   def edit

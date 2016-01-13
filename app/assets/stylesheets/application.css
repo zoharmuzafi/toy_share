@@ -13,8 +13,11 @@
  *= require_tree .
  *= require materialize
  *= require_self
+ *= require font-awesome
  */
- #chat{
+ 
+
+#chat{
  	background-color: gray;
  	margin-bottom: 10px;
  }
@@ -26,6 +29,32 @@
   text-decoration: none;
 }
 
+textarea{
+	height: 10rem;
+}
+
 a {
 	color: #FFFFFF;
+
+}
+.modalLogIn{
+	width: 33% !important;
+	height: 60% !important;
+}
+.modalSignUp{
+	width: 33% !important;
+	height: 90% !important;
+}
+#model3Content, #model2content{
+	padding-top: 10%;
+}
+.fa{
+  font-size: 120% !important;
+}
+.btn-f {
+  background-color: #3B5998 !important;
+  color: white !important;
+}
+.linkToSignUp{
+	color: #2bbbad;
 }

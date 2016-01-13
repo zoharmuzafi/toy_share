@@ -21,20 +21,37 @@
 					<% if current_user.id == @toy.user_id %>
 						<button class="btn waves-effect waves-light"><%= link_to "Edit Toy", edit_toy_path(@toy) %></button>
 						<button class="btn waves-effect waves-light" ><%= link_to "Remove Toy", toy_path(@toy), method: :delete %></button>
-						<% else %>
-							<button class="btn waves-effect waves-light" ><%= link_to "Send message", login_path %></button>
-						<% end %>
+					<% else %>
+						<%= link_to "Send #{(User.find(@toy.user_id)).f_name} a private message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
+					<% end %>		
+				<% else %>
+							<%= link_to "Want this toy? please log in", "#modal2", :class => "waves-effect waves-light btn modal-trigger" %>
 					<% end %>
+			
 				<!-- Modal Trigger -->
-		  			<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-					  <!-- Modal Structure -->
-					  <div id="modal1" class="modal modal-fixed-footer">
+					  <!-- Modal New message-->
+					  <div id="modal1" class="modal modal-fixed-footer modalMessage">
 					    <div class="modal-content">
-					      <%= form_for :message, :url => messages_path do |f| %>	
-									<%= f.text_field :content %>
-									<%= f.hidden_field :user_id, :value => @toy.user_id %> 
-									<button class="btn waves-effect waves-light"><%= f.submit "Send" %></button>
-								<% end %>
+
+						    <div class="row">
+						    	<div class="col m6 offset-m3 s6 offset-s3 center-align">
+						    		<h5><%= "Send #{(User.find(@toy.user_id)).f_name} a private message" %></h5>
+						    	</div>
+						    </div>
+						    <div class="row">
+						    	<div class="col m6 offset-m3 s6 offset-s3">
+							    	<%= form_for :message, :url => messages_path do |f| %>	
+							    	<div class="input-field">
+											<%= f.text_area :content %>
+										</div>
+										<div class="input-field center-align">
+											<%= f.hidden_field :user_id, :value => @toy.user_id %> 
+											<%= f.hidden_field :toy_id, :value => @toy.id %>
+											<%= f.submit "Send", class: "btn" %>			
+										</div>		
+										<% end %>
+									</div>
+								</div>
 					    </div>
 					  </div>
 			</div>
