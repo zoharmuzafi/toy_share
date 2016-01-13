@@ -1,3 +1,16 @@
+.homepage-image {
+	background-image: url("stuffed-animal-crop.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 10% 0 20% 0;
+	margin-bottom: 0 !important;
+}
+#homepage-button {
+	padding-left: 7%;
+	padding-bottom: 0;
+}
+
 a {
 	color: #2B98ED;
 }
@@ -22,13 +35,18 @@ body > div.row > div > ul.indicators {
 	max-width: 100%;
 	max-height: 100%;
 }
+#toy-header {
+	padding-left: 55px;
+}
 
 #toy-headline {
+	color: #FFFFFF;
 	font-size: 70px;
 	text-shadow: 2px 2px 2px #141414;
 }
 
 #toy-subheadline {
+	color: #FFFFFF;
 	font-size: 30px;
 	text-shadow: 2px 2px 2px #141414;
 }
@@ -62,17 +80,21 @@ body > div.row > div > ul.indicators {
 	max-width: 100%;
 }
 #lego-row {
-	background-image: url("Lego1.png");
+	background-image: url("https://www.timbergyms.com/PDGImages/webbackground.png ");
 	height: 500px;
 	color: #FFFFFF;
 }
 
 .how-it-works {
 	margin-top: 50px;
+	text-shadow: 2px 2px 2px #141414;
 }
 .team-link {
 	padding-bottom: 60px;
 }
 #team-modal {
 	max-height: 100%;
+}
+.div-header {
+	font-size: 50px;
 }
