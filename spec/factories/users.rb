@@ -1,9 +1,10 @@
-# spec/factories/user.rb
-require 'faker'
+# # spec/factories/user.rb
+# require 'faker'
 
-FactoryGirl.define do
-  factory :user do |f|
-    f.firstname { Faker::Name.first_name }
-    f.lastname { Faker::Name.last_name }
-  end
-end
+# FactoryGirl.define do
+#   factory :user do |f|
+#     f.f_name { Faker::Name.f_name }
+#     f.l_name { Faker::Name.l_name }
+    
+#   end
+# end
