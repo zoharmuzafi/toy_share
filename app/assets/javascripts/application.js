@@ -16,10 +16,15 @@
 //= require_tree .
 
   $(document).ready(function() {
+    // Form javascipt for raising labels 
     $('select').material_select();
 
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
+
+    // Make slider move
+    $('.slider').slider({full_width: true});
+
     $('.linkToSignUp').click(function(){
     	$('#modal2').closeModal();
     });

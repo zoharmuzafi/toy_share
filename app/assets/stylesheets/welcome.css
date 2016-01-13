@@ -1,3 +1,66 @@
-/*// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/*/
+a {
+	color: #2B98ED;
+}
+
+body > div.row > div > ul.slides {
+	background-color: #FFFFFF;
+}
+
+body > div.row > div > ul.indicators > li.indicator-item.active {
+	background-color: #D9494E
+}
+body > div.row > div > ul.indicators > li.indicator-item {
+	background-color: #FFFFFF;
+}
+body > div.row > div > ul.indicators {
+	z-index: 2;
+}
+#toyimage {
+	height: 500px;
+}
+.slide-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#toy-headline {
+	font-size: 70px;
+	text-shadow: 2px 2px 2px #141414;
+}
+
+#toy-subheadline {
+	font-size: 30px;
+	text-shadow: 2px 2px 2px #141414;
+}
+.recent-toy-title {
+	color: #000000;
+}
+.added-toys {
+	padding-top: 20px;
+}
+
+.toy-card {
+	border-radius: 40px;
+	height: 400px;
+	margin: 0 10px;
+}
+.card-image {
+	height: 350px;
+}
+.toy-image {
+	border-radius: 40px 40px 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+#lego-row {
+	background-image: url("Lego1.png");
+	height: 500px;
+	color: #FFFFFF;
+}
+
+.how-it-works {
+	margin-top: 50px;
+}
