@@ -98,3 +98,8 @@ body > div.row > div > ul.indicators {
 .div-header {
 	font-size: 50px;
 }
+#footer{
+	position: absolute;
+  margin-bottom: 0%;	
+  background-color: gray; 
+}
