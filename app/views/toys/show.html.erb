@@ -32,14 +32,13 @@
 					  <!-- Modal New message-->
 					  <div id="modal1" class="modal modal-fixed-footer modalMessage">
 					    <div class="modal-content">
-
 						    <div class="row">
-						    	<div class="col m6 offset-m3 s6 offset-s3 center-align">
+						    	<div class="col m10 offset-m1 s10 offset-s1 center-align">
 						    		<h5><%= "Send #{(User.find(@toy.user_id)).f_name} a private message" %></h5>
 						    	</div>
 						    </div>
 						    <div class="row">
-						    	<div class="col m6 offset-m3 s6 offset-s3">
+						    	<div class="col m10 offset-m1 s10 offset-s1">
 							    	<%= form_for :message, :url => messages_path do |f| %>	
 							    	<div class="input-field">
 											<%= f.text_area :content %>

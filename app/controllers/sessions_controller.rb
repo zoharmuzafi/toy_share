@@ -20,10 +20,14 @@ class SessionsController < ApplicationController
       else
 			 redirect_to user_path(@user)
       end
-
 		else
 			flash[:error] = "Username or password is incorrect"
-			redirect_to login_path
+			if params[:toy_show]
+        toy = Toy.find(params[:toy_id])
+        redirect_to toy_path(toy)
+      else
+       redirect_to toys_path
+      end
 		end
   end
 
