@@ -32,8 +32,4 @@
     	$('#modal2').closeModal();
     });
 
-    // $('#show-team').click(function(){
-    //     $('.about-team').toggle();
-    // });
-
   });

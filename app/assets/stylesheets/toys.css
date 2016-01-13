@@ -7,10 +7,6 @@
 	width: 100%;
 }
 
-.clear-search {
-	
-}
-
 textarea{
 	height: 100rem;
 }
@@ -18,4 +14,21 @@ textarea{
 .modalMessage{
 	width: 40% !important;
 	height: 55% !important;
+}
+
+#card-image {
+	height: 200px;
+}
+
+#blank-card {
+	border-radius: 40px;
+	min-height: 300px;
+}
+
+.select-dropdown {
+	color: #2B98ED;
+}
+
+.select-wrapper > ul > li > span {
+	color: #2B98ED;
 }
