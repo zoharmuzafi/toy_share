@@ -10,10 +10,10 @@ class User < ActiveRecord::Base
 	has_many :toys, dependent: :destroy
 	belongs_to :city
 
-	validates :f_name, presence: true, length: { minimum: 2 }
-	validates :l_name, presence: true, length: { minimum: 2 }
-	validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-	validates :password, presence: true, length: { minimum: 2 }
+	validates :f_name, presence: true, length: { minimum: 2 }, on: :create
+	validates :l_name, presence: true, length: { minimum: 2 }, on: :create
+	validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, on: :create
+	validates :password, presence: true, length: { minimum: 2 }, on: :create
 
 
 # Using auth from omniauth 
@@ -33,8 +33,7 @@ class User < ActiveRecord::Base
             l_name: ((auth["info"]["name"]).split(" "))[1], 
             email: auth['info']['email'], 
             password: FFaker::Internet.password,
-            
-            # avatar: auth['info']['image'], 
+            avatar: auth['info']['image'], 
             # bio: "To Edit Bio, Edit Your Profile"
         )
     end

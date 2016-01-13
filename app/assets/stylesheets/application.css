@@ -13,7 +13,32 @@
  *= require_tree .
  *= require materialize
  *= require_self
+ *= require font-awesome
  */
+
+.nav-bar {
+	background-color: #CCCCCC;
+}
+.nav-image {
+	height: 60px;
+	margin-left: 10px;
+}	
+.btn {
+	background-color: #2B98ED;
+}
+.btn:hover {
+	background-color: #2DA0FA;	
+}
+.btn:focus {
+	background-color: #2DA0FA;	
+}
+.btn:visited {
+	background-color: #2DA0FA;	
+}
+
+body > div.row > div > ul.slides > li.active > div > button > a {
+	color: #FFFFFF;
+}
  #chat{
  	background-color: gray;
  	margin-bottom: 10px;
@@ -26,6 +51,36 @@
   text-decoration: none;
 }
 
+textarea{
+	height: 6rem;
+}
+
 a {
-	color: #FFFFFF;
+	color: #2B98ED;
+
+}
+.modalLogIn{
+	width: 33% !important;
+	height: 60% !important;
+}
+.modalSignUp{
+	width: 33% !important;
+	height: 90% !important;
+}
+.modalMessage{
+	width: 33% !important;
+	height: 50% !important;
+}
+#model3Content, #model2content{
+	padding-top: 10%;
+}
+.fa{
+  font-size: 120% !important;
+}
+.btn-f {
+  background-color: #3B5998 !important;
+  color: white !important;
+}
+.linkToSignUp{
+	color: #2bbbad;
 }

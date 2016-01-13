@@ -1,6 +1,6 @@
-<nav>
-    <div class="nav-wrapper grey lighten-1">
-      <%= link_to image_tag("Drawing.png", :size => "150x90"), root_path %>
+<nav class="nav-bar">
+    <div class="nav-wrapper">
+      <%= link_to image_tag("Drawing.png", class: "nav-image"), root_path %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
           <li><%= link_to 'Profile', user_path(current_user) %></li>
@@ -10,7 +10,7 @@
         <% if current_user %>
         	<li><%= link_to 'Logout', logout_path %><li>
         <% else %>
-       		<li><%= link_to 'Login', login_path %></li>
+       		<li><%= link_to "Log in", "#modal2", :class => "waves-effect waves-light btn modal-trigger" %></li>
        	<% end %>
       </ul>
     </div>

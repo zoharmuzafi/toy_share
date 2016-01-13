@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160112083729) do
   create_table "chats", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "toy_id"
   end
 
   create_table "cities", force: :cascade do |t|

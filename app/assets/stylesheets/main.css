@@ -1,0 +1,45 @@
+#chat{
+ 	background-color: gray;
+ 	margin-bottom: 10px;
+ }
+ .pagination a.active {
+  color: #fff;
+}
+ .pagination a {
+  color: #757575;
+  text-decoration: none;
+}
+
+textarea{
+	height: 6rem;
+}
+
+a {
+	color: #FFFFFF;
+
+}
+.modalLogIn{
+	width: 33% !important;
+	height: 60% !important;
+}
+.modalSignUp{
+	width: 33% !important;
+	height: 90% !important;
+}
+.modalMessage{
+	width: 33% !important;
+	height: 50% !important;
+}
+#model3Content, #model2content{
+	padding-top: 10%;
+}
+.fa{
+  font-size: 120% !important;
+}
+.btn-f {
+  background-color: #3B5998 !important;
+  color: white !important;
+}
+.linkToSignUp{
+	color: #2bbbad;
+}

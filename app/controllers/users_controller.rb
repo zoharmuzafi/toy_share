@@ -3,19 +3,25 @@ class UsersController < ApplicationController
 before_filter :authorize, only: [:edit, :update, :destroy]
 
 
-  def new
-    @user = User.new
-  end
-
   def create
-
     @user = User.new(user_params)
+    if user_params[:toy_show]
+      toy = Toy.find(user_params[:toy_id])
+    end
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      if toy
+        redirect_to toy_path(toy)
+      else
+        redirect_to user_path(@user)
+      end
     else
-      flash[:error] = @user.error.full_messages.join(", ")
-      redirect_to '/signup'
+      flash[:error] = @user.errors.full_messages.join(", ")
+      if toy
+        redirect_to toy_path(toy)
+      else
+        redirect_to toys_path
+      end
     end
   end
 
@@ -29,7 +35,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
   end
 
   def update
-    @user = current_user
+  @user = current_user
   user_params = params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio)
   if @user.update_attributes(user_params)
     redirect_to user_path(@user)
@@ -52,6 +58,6 @@ before_filter :authorize, only: [:edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio)
+      params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio, :toy_show, :toy_id)
     end
 end
