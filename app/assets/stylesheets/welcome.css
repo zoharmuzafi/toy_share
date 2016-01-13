@@ -101,5 +101,11 @@ body > div.row > div > ul.indicators {
 #footer{
 	position: absolute;
   margin-bottom: 0%;	
-  background-color: gray; 
+  background-color: rgba(120, 120, 120, 0.7); 
+  width: 100%;
+  margin-top: 5%;
+}
+.recntCardName{
+	border-top: 1px solid black;
+	padding-bottom: 0.5%;
 }

@@ -29,7 +29,7 @@
 			</div>
 			<div class="col m4 center">
 				<i class="large material-icons">not_interested</i>
-				<h3>Toys are donated.</h3>
+				<h3>Get your toy for free</h3>
 				<h6>This is a free service that connects people.</h6>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 							<div class="card-image valign-wrapper">
 								<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
 							</div>
-							<div class="card-text center">
+							<div class="card-text center recntCardName">
 				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
 			  			</div>
 						</div>
@@ -57,8 +57,8 @@
 	</div>
 </div>
 <div class="row" id="footer">
-	<div class="col m12 s12 team-link center">
-		<h6><a class="modal-trigger" href="#team-modal">Learn more about the ToyBin Team</a></h6>
+	<div class="col m12 s12 team-link left">
+		<h6>© 2016-2026 ToyBin team All Rights Reserved. To learn more about the ToyBin Team <a class="modal-trigger" href="#team-modal">click here</a></h6>
 	</div>
 </div>
 
