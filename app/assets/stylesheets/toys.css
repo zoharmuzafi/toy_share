@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-.toys-button {
-	margin-bottom: 10px;
+#toys-button {
+	border-radius: 0 40px;
+}
+
+.filter-button {
+	margin-bottom: 15px;
 	width: 100%;
 }
 
@@ -31,4 +35,23 @@ textarea{
 
 .select-wrapper > ul > li > span {
 	color: #2B98ED;
+}
+
+#toy-container {
+	border-radius: 40px;
+	margin-top: 40px;
+	max-height: 500px;
+}
+
+#toys-row {
+	padding-bottom: 10px;
+}
+
+.toy-image {
+	height: 350px;
+}
+
+#show-toy-image {
+	border-radius: 40px;
+	max-height: 100%;
 }

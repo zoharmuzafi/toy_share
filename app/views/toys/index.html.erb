@@ -34,11 +34,11 @@
 						<% end %>
 					</div>
 					<div class="input-group">
-						<%= submit_tag "Filter", name: nil, class: "btn waves-effect waves-light toys-button" %>
+						<%= submit_tag "Filter", name: nil, class: "btn waves-effect waves-light filter-button" %>
 					</div>
 				<% end %>
 				<div class="clear-search">
-					<%= link_to "Reset", toys_path, class: "btn waves-effect waves-light toys-button" %>
+					<%= link_to "Reset", toys_path, class: "btn waves-effect waves-light filter-button" %>
 				</div>
 			</div>
 		</div>
@@ -47,20 +47,18 @@
 			<% (@toys).in_groups_of(3, false).each do |group| %>
 					<div class="row">
 						<% group.each do |toy| %>
+							<%= link_to(toy_path(toy)) do %>
 							<div class="col s12 m4">
 								<div class="z-depth-2" id="blank-card">
 									<div class="valign-wrapper" id="card-image">
 										<%= image_tag toy.image.url(:large), class: "valign toy-image responsive-img" %>
 									</div>
 									<div class="card-text center">
-										<p class="toy-name"><%= link_to "#{toy.name}", toy_path(toy) %></p>
-									</div>
-									<div class="divider"></div>
-									<div class="card-action center">
-										<%= link_to "More details", toy_path(toy) %>
+										<p class="toy-name"><%= toy.name %></p>
 									</div>
 								</div>
 							</div>
+							<% end %>
 						<% end %>
 					</div>
 			<% end %>
