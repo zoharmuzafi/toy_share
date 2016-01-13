@@ -36,8 +36,8 @@
 				<% @toys.each do |toy| %>
 					<div class="col s12 m4">
 						<div class="toy-card z-depth-2">
-							<div class="card-image center">
-								<%= image_tag toy.image.url(:large), class: "toy-image" %>
+							<div class="card-image valign-wrapper">
+								<%= image_tag toy.image.url(:large), class: "valign toy-image" %>
 							</div>
 							<div class="card-text center">
 							<div class="divider"></div>
