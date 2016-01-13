@@ -25,5 +25,7 @@
     // Make slider move
     $('.slider').slider({full_width: true});
 
-
+    $('.linkToSignUp').click(function(){
+    	$('#modal2').closeModal();
+    });
   });

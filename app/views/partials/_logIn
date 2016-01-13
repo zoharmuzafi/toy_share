@@ -1,0 +1,35 @@
+<!-- Modal New login-->
+<div id="modal2" class="modal modal-fixed-footer modalLogIn">
+  <div class="modal-content" id="model2Content">
+		<div class="row">
+        <div class="col m6 s6 offset-m3 offset-s3 center-align">
+          <h4>Login</h4>
+        </div>
+      </div>
+    <div class="row">
+        <div class="col m8 s8 offset-m2 offset-s2 center-align">
+  				 <%= "Don't have an account?" %>&nbsp&nbsp<%= link_to "Sign Up", "#modal3", :class => "waves-effect waves-light modal-trigger linkToSignUp" %>
+  			</div>
+  	</div>
+
+		<%= form_tag '/login' do %>
+		<div class="input-field">
+			<%= label_tag(:email) %>
+			<%= email_field_tag :email %>
+		</div>
+		<div class="input-field">
+				<%= label_tag(:password) %>
+				<%= password_field_tag :password %>
+				<% if @toy %>
+					<%= hidden_field_tag :toy_show, :value => @toy_show %>
+					<%= hidden_field_tag :toy_id,  @toy.id %>
+				<% end %>
+		</div>
+		<div class="input-field">
+			<button class="btn waves-effect waves-light toys-button"><%= submit_tag "Submit" %></button>
+		</div>
+		<% end %>	
+		 <%= link_to "/auth/facebook", class:"btn btn-block btn-f" do %><i class="fa fa-facebook-official"></i>&nbsp&nbsp Connect with Facebook<% end %>
+  </div>
+</div>
+
