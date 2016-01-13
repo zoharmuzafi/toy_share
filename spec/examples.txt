@@ -1,0 +1,10 @@
+example_id                                     | status | run_time        |
+---------------------------------------------- | ------ | --------------- |
+./spec/models/toys_controller_spec.rb[1:1:1]   | failed | 0.00177 seconds |
+./spec/models/toys_controller_spec.rb[1:1:2]   | failed | 0.00177 seconds |
+./spec/models/toys_controller_spec.rb[1:2:1]   | failed | 0.00176 seconds |
+./spec/models/toys_controller_spec.rb[1:2:2]   | failed | 0.00192 seconds |
+./spec/models/toys_controller_spec.rb[1:3:1:1] | failed | 0.00202 seconds |
+./spec/models/toys_controller_spec.rb[1:3:1:2] | failed | 0.08747 seconds |
+./spec/models/toys_controller_spec.rb[1:3:2:1] | failed | 0.00199 seconds |
+./spec/models/user_spec.rb[1:1:1]              | failed | 0.22313 seconds |

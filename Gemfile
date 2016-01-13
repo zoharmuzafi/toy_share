@@ -44,6 +44,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -55,5 +57,16 @@ group :development do
 
   gem 'omniauth-facebook'
   gem 'ffaker'
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'omniauth-facebook'
+  gem 'ffaker'
+  gem 'faker'
+end
+
 end
 
