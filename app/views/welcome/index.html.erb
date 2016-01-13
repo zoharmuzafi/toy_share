@@ -1,2 +1,80 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="row">
+	<div class="slider">
+		<ul class="slides">
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("stuffed-animal.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Get a toy!</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Find toys looking for a new home.</h5>
+				 	<%= link_to "Find Toys", toys_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("girl-mlp.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Give a toy!</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Give away your unused toys.</h5>
+				 	<%= link_to "Get Started", signup_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+			<li id="toyimage" class="z-depth-2">
+				<%= image_tag("action-figure.jpg", class: "slide-image") %>
+				<div class="caption center-align">
+				  <h3 id="toy-headline">Sign up now</h3>
+				  <h5 id="toy-subheadline" class="light grey-text text-lighten-3">Create an account to begin helping others</h5>
+				 	<%= link_to "Get Started", signup_path, class: "btn waves-effect waves-light" %>
+	      </div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="added-toys">
+		<h1 class="div-header center">Recently Added Toys</h1>
+		<div class="col m10 offset-m1">
+			<% if @toys.any? %>
+				<% @toys.each do |toy| %>
+					<div class="col s12 m4">
+						<div class="toy-card z-depth-2">
+							<div class="card-image valign-wrapper">
+								<%= image_tag toy.image.url(:large), class: "valign toy-image" %>
+							</div>
+							<div class="card-text center">
+								<div class="divider"></div>
+				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
+			  			</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="row" id="lego-row">
+	<div class="col m10 offset-m1">
+		<div class="how-it-works">
+			<div class="col m4 center">
+				<i class="large material-icons">search</i>
+				<h3>Find toys for your kids</h3>
+				<h6>Look through the colleciton of toys in the area and find something you like.</h6>
+			</div>
+			<div class="col m4 center">
+				<i class="large material-icons">forum</i>
+				<h3>Chat with the toy giver</h3>
+				<h6>Set up a time to meet or arrange shipping methods.</h6>
+			</div>
+			<div class="col m4 center">
+				<i class="large material-icons">not_interested</i>
+				<h3>Toys are donated.</h3>
+				<h6>This is a free service that connects people.</h6>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col m10 offset-m1">
+		<h1 class="div-header">About the ToyBin team</h1>
+		
+	</div>
+</div>

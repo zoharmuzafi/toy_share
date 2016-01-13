@@ -15,9 +15,31 @@
  *= require_self
  *= require font-awesome
  */
- 
 
-#chat{
+.nav-bar {
+	background-color: #CCCCCC;
+}
+.nav-image {
+	height: 60px;
+	margin-left: 10px;
+}	
+.btn {
+	background-color: #2B98ED;
+}
+.btn:hover {
+	background-color: #2DA0FA;	
+}
+.btn:focus {
+	background-color: #2DA0FA;	
+}
+.btn:visited {
+	background-color: #2DA0FA;	
+}
+
+body > div.row > div > ul.slides > li.active > div > button > a {
+	color: #FFFFFF;
+}
+ #chat{
  	background-color: gray;
  	margin-bottom: 10px;
  }
