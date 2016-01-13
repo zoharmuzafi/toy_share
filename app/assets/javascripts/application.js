@@ -16,6 +16,9 @@
 //= require_tree .
 
   $(document).ready(function() {
+
+    // $('.about-team').hide();
+    
     // Form javascipt for raising labels 
     $('select').material_select();
 
@@ -28,4 +31,9 @@
     $('.linkToSignUp').click(function(){
     	$('#modal2').closeModal();
     });
+
+    // $('#show-team').click(function(){
+    //     $('.about-team').toggle();
+    // });
+
   });
