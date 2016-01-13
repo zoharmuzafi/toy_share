@@ -18,7 +18,10 @@
 .nav-bar {
 	background-color: #F5B45C;
 }
-	
+.nav-image {
+	height: 60px;
+	margin-left: 10px;
+}	
 .btn {
 	background-color: #2B98ED;
 }
