@@ -30,7 +30,7 @@
 }
 
 textarea{
-	height: 10rem;
+	height: 6rem;
 }
 
 a {
@@ -44,6 +44,10 @@ a {
 .modalSignUp{
 	width: 33% !important;
 	height: 90% !important;
+}
+.modalMessage{
+	width: 33% !important;
+	height: 50% !important;
 }
 #model3Content, #model2content{
 	padding-top: 10%;
