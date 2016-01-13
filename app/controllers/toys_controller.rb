@@ -16,7 +16,7 @@ class ToysController < ApplicationController
     if current_user
       @toy = Toy.new
     else
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 
@@ -37,7 +37,7 @@ class ToysController < ApplicationController
 
   def edit
     unless current_user.id == @toy.user_id 
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 
