@@ -63,14 +63,13 @@ body > div.row > div > ul.indicators {
 
 .blank-card {
 	border-radius: 40px;
-	min-height: 350px;
+	min-height: 200px;
 	margin: 0 10px;
 }
 .card-image {
 	height: 350px;
 }
 .toys-images {
-	border-radius: 40px 40px 0 0;
 	margin-left: auto;
 	margin-right: auto;
 	max-height: 100%;
@@ -130,4 +129,3 @@ body > div.row > div > ul.indicators {
 
 h4 {
 	font-family: 'Love Ya Like A Sister', cursive;
-}

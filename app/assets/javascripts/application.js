@@ -31,6 +31,13 @@
     $('.linkToSignUp').click(function(){
     	$('#modal2').closeModal();
     });
+    $('.seeMore').on("click", function(event){
+        event.preventDefault();
+        var id = event.target.id;
+        console.log(id);
+        $(".allMessages").hide();
+        $("#chat"+id).show();
+    });
 
      $(".button-collapse").sideNav();
 

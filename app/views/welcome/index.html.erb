@@ -39,19 +39,20 @@
 	<div class="row">
 		<div class="added-toys">
 			<h1 class="div-header center">Toys looking for a new home</h1>
-			<div class="col m10 offset-m1">
+			<div class="col s10 offset-s1 m10 offset-m1">
 				<% if @toys.any? %>
 					<% @toys.each do |toy| %>
-						<div class="col s12 m4">
-							<div class="blank-card z-depth-2">
-								<div class="card-image valign-wrapper">
-									<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
+						<%= link_to(toy_path(toy)) do %>
+							<div class="col s12 m4">
+								<div class="blank-card welcome-toy-card z-depth-2">
+									<div class="card-background" style="background-image: url(<%= toy.image.url(:large) %>)">
+									</div>
+									<div class="card-text center recentNameCard">
+						    		<p><%= toy.name %></p>
+					  			</div>
 								</div>
-								<div class="card-text center recentNameCard">
-					    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
-				  			</div>
+								<% end %>
 							</div>
-						</div>
 					<% end %>
 				<% end %>
 			</div>
@@ -70,7 +71,7 @@
  <div id="team-modal" class="modal bottom-sheet">
    <div class="modal-content">
      <div class="row">
-			<div class="col m3 s3">
+			<div class="col m3 s6">
 				<div class="blank-card z-depth-2">
 					<div class="team-image valign-wrapper">
 						<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAVRAAAAJDBjNGMyN2YxLWM1ZDUtNDE1Mi04ZTM2LWRkMzUwNmQwNzU5MQ.jpg", class: "team-image") %>
@@ -91,7 +92,7 @@
 					</div>
 				</div>	
 			</div>	
-			<div class="col m3 s3">
+			<div class="col m3 s6">
 				<div class="blank-card z-depth-2">
 					<div class="team-image valign-wrapper">
 						<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAIMAAAAJGYyMmMwOGE2LTMwODgtNDNiYi1iOTI5LTU1M2MxY2Q0YTAwYg.jpg", class: "team-image") %>
@@ -112,7 +113,7 @@
 					</div>
 				</div>	
 			</div>
-			<div class="col m3 s3">
+			<div class="col m3 s6">
 				<div class="blank-card z-depth-2">
 					<div class="team-image valign-wrapper">
 						<%= image_tag("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAR9AAAAJDE4ZjU0Y2U5LTdlZDgtNGE2NC1iYjc4LTIzNjE5NzM1YjBlNg.jpg", class: "team-image") %>
@@ -133,7 +134,7 @@
 					</div>
 				</div>	
 			</div>
-			<div class="col m3 s3">
+			<div class="col m3 s6">
 				<div class="blank-card z-depth-2">
 					<div class="team-image valign-wrapper">
 							<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAXLAAAAJDg5M2E5YTIwLTdlZTMtNDE2OC1iYzVlLThlMzMwZmUxYmExZA.jpg", class: "team-image") %>
