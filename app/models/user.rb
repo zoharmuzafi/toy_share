@@ -1,7 +1,14 @@
 class User < ActiveRecord::Base
 
 	has_secure_password
-	has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thumb: "100x100>"}, default_url: "https://s3-us-west-2.amazonaws.com/toybinwdi24/missing.png" 
+	has_attached_file :avatar, 
+                      styles: { large: "500x500>", medium: "300x300>", thumb: "100x100>"}, 
+                      storage: :s3,
+                      s3_credentials: Proc.new { |a| a.instance.s3_credentials },
+                      s3_host_name: 's3-us-west-2.amazonaws.com',
+                      path: "user/:id/:style/image.:extension",
+                      default_url: "https://s3-us-west-2.amazonaws.com/toybinwdi24/missing.png" 
+                      
 	validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 	has_many :messages, dependent: :destroy
