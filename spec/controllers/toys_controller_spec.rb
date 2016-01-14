@@ -1,73 +1,84 @@
-# require "rails_helper"
-# require 'spec_helper'
+require "rails_helper"
+require 'spec_helper'
 
-# RSpec.describe ToysController, type: :controller do
+RSpec.describe ToysController, type: :controller do
 
-#   describe "#index" do
-#     before do
-#       @all_toys = Toy.all
-#       get :index
-#     end
-#   end 
+  describe "#index" do
+    before do
+      @all_toys = Toy.all
+      get :index
+    end
+  end 
 
-#     it "should assign @toys" do
-#       expect(assigns(:toys)).to eq(@all_toys)
-#     end
+  it "should assign @toys" do
+      expect(assigns(:toys)).to eq(@all_toys)
+    end
 
-#     it "should render the :index view" do
-#       expect(response).to render_template(:index)
-#     end
-#   end
+  it "should render the :index view" do
+  		get :index
+      expect(response).to render_template("index")
+    end
+ 
+  describe "#new" do
+    before do
+      get :new
+    end
+  end 
 
-#   describe "#new" do
-#     before do
-#       get :new
-#     end
+  it "should redirect when toys " do
+      expect(assigns(:toys)).to eq(@all_toys)
+    end
 
-#     it "should assign @toy" do
-#       expect(assigns(:toy)).to be_instance_of(Toy)
-#     end
+  def new
+    if current_user
+      @toy = Toy.new
+    else
+      redirect_to login_path
+    end
+  end
 
-#     it "should render the :new view" do
-#       expect(response).to render_template(:new)
-#     end
-# end 
 
-#   describe "#create" do
-#     context "success" do
-#       before do
-#         @toys_count =  Toy.count
-#         post :create, toy: {
-#           name:FFaker::Lorem.words(5).join(" "),
-#           description:FFaker::Lorem.sentence,
-#           category:FFaker::Lorem.words(3).join,
-#           gender:FFaker::Lorem.words(3).join,
-#           user_ud:FFaker::Lorem.sentence,
-#           city_id:FFaker::Lorem.sentence,
-#           available:FFaker::Lorem.boolean,
-#           created_at:FFaker::Lorem.date,
-#           updated_at:FFaker::Lorem.date,
-#           image_content_type:FFaker::Lorem.image,
-#           image_file_size:FFaker::Lorem.numbers,
-#           image_dated_at:FFaker::Lorem.date
-#         }
-#       end
+  describe "#create" do
+  	context "success" do 
+  		before do 
+  			@toys_count = Toy.count 
+ 
 
-#       it "should add new toy to the database" do
-#         expect(Toy.count).to eq(@toys_count + 1)
-#       end
+  		post :create, toy: {
 
-#       it "should redirect_to 'toy_path'" do
-#         expect(response.status).to be(302)
-#         expect(response.location).to match(/\/toys\/\d+/)
-#       end
-#     end
+      name: FFaker::Name.name,
+      description: FFaker::HipsterIpsum.characters,
+      gender: FFaker::Gender.random,
+      age_range: FFaker::HipsterIpsum.characters,
+      user_id: 12,
+      city_id: 12,
+      available: true,
+      created_at: FFaker::Time.date,
+      updated_at: FFaker::Time.date,
+      image_file_name: FFaker::HipsterIpsum.characters,
+      image_content_type: FFaker::HipsterIpsum.characters,
+      image_file_size: 12,
+      image_updated_at: FFaker::Time.date
 
-#   describe "#show" do
-#     before do
-#       @toy = FactoryGirl.create(:toy)
-#       get :show, id: @toy.id
-#     end
+}
+	end 
+
+
+  # describe "#show" do
+  #   before do
+  #     @toy = FactoryGirl.create(:toy)
+  #     get :show, id: @toy.id
+  #   end
+
+
+
+
+		end 
+	end 
+ end 
+
+ 
+
 
 #     it "should assign @toy" do
 #       expect(assigns(:toy)).to eq(@toy)
