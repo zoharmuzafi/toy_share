@@ -1,5 +1,5 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * This is a manifest file that'll be copiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -17,11 +17,12 @@
  */
 
 .nav-bar {
-	background-color: #CCCCCC;
+	background-color: rgba(13, 74, 121, 0.7);
 }
 .nav-image {
-	height: 60px;
-	margin-left: 10px;
+	height: 77%;
+	margin-left: 0.5%;
+	margin-top: 0.5%;
 }	
 .btn {
 	background-color: #2B98ED;
@@ -61,11 +62,13 @@ a {
 }
 .modalLogIn{
 	width: 33% !important;
-	height: 60% !important;
+	height: 65% !important;
+	max-height: 80%;
 }
 .modalSignUp{
 	width: 33% !important;
-	height: 90% !important;
+	height: 100% !important;
+	max-height: 85%;
 }
 .modalMessage{
 	width: 33% !important;
@@ -88,4 +91,23 @@ a {
 .blank-card {
 	background-color: #FFFFFF !important;
 	border-radius: 40px !important;
+}
+
+.alert-danger{
+	position: absolute;
+	background-color: rgba(234, 15, 46, 0.6);
+	padding-left: 2%;
+	width: 100%;
+}
+.alert-success{
+	position: absolute;
+	background-color: rgba(150, 216, 153, 0.8);
+	width: 100%;
+	padding-left: 2%;
+}
+body{
+	background-color: rgba(206, 224, 239, 0.8);
+}
+.whiteBackground{
+	background-color: white;
 }

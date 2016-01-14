@@ -68,3 +68,11 @@ textarea{
 .toy-show {
 	overflow: auto;
 }
+
+#toys-index{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.searchBar{
+	padding-right: 5% !important;
+}
