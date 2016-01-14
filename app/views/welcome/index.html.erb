@@ -42,16 +42,17 @@
 			<div class="col m10 offset-m1">
 				<% if @toys.any? %>
 					<% @toys.each do |toy| %>
-						<div class="col s12 m4">
-							<div class="blank-card z-depth-2">
-								<div class="card-image valign-wrapper">
-									<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
+						<%= link_to(toy_path(toy)) do %>
+							<div class="col s12 m4">
+								<div class="blank-card welcome-toy-card z-depth-2">
+									<div class="card-background" style="background-image: url(<%= toy.image.url(:large) %>)">
+									</div>
+									<div class="card-text center recentNameCard">
+						    		<p><%= toy.name %></p>
+					  			</div>
 								</div>
-								<div class="card-text center recentNameCard">
-					    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
-				  			</div>
+								<% end %>
 							</div>
-						</div>
 					<% end %>
 				<% end %>
 			</div>

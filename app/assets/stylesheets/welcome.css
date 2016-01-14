@@ -122,3 +122,7 @@ body > div.row > div > ul.indicators {
 	width: 30%;
 	display: inline-block;
 }
+
+.welcome-toy-card {
+	margin: 0;
+}
