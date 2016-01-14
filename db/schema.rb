@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160112051830) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +75,8 @@ ActiveRecord::Schema.define(version: 20160112051830) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
 end
