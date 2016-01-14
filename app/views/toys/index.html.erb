@@ -2,12 +2,12 @@
 	<div class="row">
 		<div class="col m12 center">
 			<h1>Toys looking for a new home</h1>
-			<%= link_to "Add a toy", new_toy_path, class: "btn waves-effect waves-light filter-button" %>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col s7 offset-s3 m2">
 			<div>
+				<%= link_to "Add Toy", new_toy_path, class: "btn waves-effect waves-light new-toy-button" %>
 				<p>Filter toys by:</p>
 				<%= form_tag '', method: :get do %>
 					<div class="input-group">
