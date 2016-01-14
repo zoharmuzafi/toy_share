@@ -7,7 +7,9 @@ Toy Bin is a search engine that helps members look for donated children toys bas
 
 ##Technologies
 
-**Backend:** Ruby on Rails, AJAX, PostgreSQL, RSpec, JavaScript
+
+** Backend: ** Ruby on Rails, AJAX, PostgreSQL, RSpec, JavaScript
+
 
 **Frontend:** HTML, CSS, jQuery, Materialize
 
@@ -26,6 +28,7 @@ Facebook and Rspec -
 ![Front Page]
 (/images_ReadME/ToyBin_Index.png)
 
+
 ##Future Steps
 
 We understand that Toy Bin is a work in progress and we hope we can add the following additions in the future: 
@@ -40,11 +43,15 @@ We understand that Toy Bin is a work in progress and we hope we can add the foll
 
 
 ##About The Team 
-	
+
 [Andre Massey] ( /https://www.linkedin.com/in/andremassey1) - 
+
 
 [Cynthia Salinas] ( /https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
 
 [Zohar Muzafi] ( /https://www.linkedin.com/in/zoharmuzafi) - 
 	
-[Michael Rockway] ( /https://www.linkedin.com/in/mrockway) -
+
+[Michael Rockway](#https://www.linkedin.com/in/mrockway) - 
+
+
