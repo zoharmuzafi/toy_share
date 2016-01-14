@@ -37,9 +37,12 @@
       </div>
       <% end %>
       <%end%>
-      <div class="pagination">
-        <a><%= will_paginate @toys, class: "waves-effect waves-light btn" %></a>
-      </div>
+      <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @toys %>
+    </div>
+    <%= will_paginate @toys, :container => false, class: "waves-effect waves-light btn" %>
+  </div>
     </div>
   </div>
 </div>
