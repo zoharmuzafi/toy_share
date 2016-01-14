@@ -39,7 +39,7 @@
 	<div class="row">
 		<div class="added-toys">
 			<h1 class="div-header center">Toys looking for a new home</h1>
-			<div class="col m10 offset-m1">
+			<div class="col s10 offset-s1 m10 offset-m1">
 				<% if @toys.any? %>
 					<% @toys.each do |toy| %>
 						<%= link_to(toy_path(toy)) do %>
