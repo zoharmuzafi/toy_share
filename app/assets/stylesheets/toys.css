@@ -12,6 +12,10 @@
 	margin-right: 0;
 }
 
+.new-toy-button {
+	background-color: #F9FA82 !important;
+	color: #000000 !important;
+}
 .toys-button {
 	width: 100%;
 }
