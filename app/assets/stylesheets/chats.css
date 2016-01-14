@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 .reply{
 	height: 5rem;
+	border-radius: 30px;
+	padding: 3% 5% 3% 5%;
 }
 .message>a, .messageCard>a{
 	color: #039BE5;
@@ -17,6 +19,7 @@
 }
 .allMessages{
 	display: none;
+	padding: 0 5% 0 5%;
 }
 
 /*	background-color: white;
@@ -24,5 +27,22 @@
 }
 .inbox-container{
 	padding-bottom: 10%;
+}
+.inboxHeader{
+	padding-bottom: 2%;
+}
+.inboxTitle{
+	color: white;
+	text-shadow: 2px 2px 2px #141414;
+}
+.chatHeader{
+	border-top: 1px solid gray;
+	padding-top: 3%; 
+}
+.chatSubject{
+	font-size: 1.3em;
+}
+.messageText{
+	overflow: hidden;
 }
 

@@ -1,22 +1,24 @@
 <div class="inbox-container">
+<div class="inboxHeader">
 	<div class="row">
-		<div class="col m4 s4 offset-m4 offset-s4 center-align">
-			<h1>Inbox</h1>
-		</div> 
-	</div>
-	<div class="row">
-		<div class="col m4 s4 offset-m4 offset-s4 center-align">
-			<%= link_to "Refresh Inbox", chats_path, class: "btn" %>
-		</div> 
+			<div class="col m4 s4 offset-m4 offset-s4 center-align inboxTitle">
+				<h1>Inbox</h1>
+			</div> 
+		</div>
 	</div>
 	<br>
 	<div class="row"> <!-- beginning of chat and messages row -->
 			<div class="col m4 offset-m1 center-align messageCard z-depth-2 blank-card">
+			<div class="row">
+				<div class="col m12 center-align">
+					<%= link_to "Check Messages", chats_path, class: "btn" %>
+				</div> 
+			</div>
 			<% @chats.reverse.each do |chat| %>
-				<div class="row">
+				<div class="row chatHeader">
 					<div class="col m12 left-align">
-						<%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %>
-						<%= link_to "- See More", "#", class: "seeMore", id: "#{chat.id}" %>
+						<span class="chatSubject"><%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %> </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%= link_to "See Messages", "#", class: "seeMore", id: "#{chat.id}" %>
 					</div>
 				</div>
 			<% end %>		
@@ -29,10 +31,10 @@
 						<div class="oneMessage">
 							<% message_owner = User.find(message.user_id) %>
 							<% if message_owner.id != current_user.id %>
-								<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
-								<%= "#{message.content}" %>
+								<p><%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
+								<%= "#{message.content}" %></p>
 							<% else %>
-								<%= "you: #{message.content}" %>
+								<p><%= "you: #{message.content}" %></p>
 							<% end %>
 						</div>
 					<% end %>
