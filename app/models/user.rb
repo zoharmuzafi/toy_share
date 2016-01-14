@@ -40,5 +40,10 @@ class User < ActiveRecord::Base
             # bio: "To Edit Bio, Edit Your Profile"
         )
     end
+
+   def s3_credentials
+       { :bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET'] }
+   end
+   
 end
 

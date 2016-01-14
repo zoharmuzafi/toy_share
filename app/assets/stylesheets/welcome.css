@@ -41,14 +41,18 @@ body > div.row > div > ul.indicators {
 
 #toy-headline {
 	color: #FFFFFF;
-	font-size: 70px;
+	font-size: 80px;
 	text-shadow: 2px 2px 2px #141414;
+	font-family: 'Love Ya Like A Sister', cursive;
+	text-align: center;
 }
 
 #toy-subheadline {
 	color: #FFFFFF;
 	font-size: 30px;
 	text-shadow: 2px 2px 2px #141414;
+	font-family: 'Love Ya Like A Sister', cursive;
+	text-align: center;
 }
 .recent-toy-title {
 	color: #000000;
@@ -116,10 +120,14 @@ body > div.row > div > ul.indicators {
 	width: 20%;
 }
 .howDetails{
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 200;
 }
 .social{
 	width: 30%;
 	display: inline-block;
+}
+
+h4 {
+	font-family: 'Love Ya Like A Sister', cursive;
 }
