@@ -88,6 +88,12 @@ a {
 .linkToSignUp{
 	color: #2bbbad;
 }
+
+.blank-card {
+	background-color: #FFFFFF !important;
+	border-radius: 40px !important;
+}
+
 .alert-danger{
 	position: absolute;
 	background-color: rgba(234, 15, 46, 0.6);
