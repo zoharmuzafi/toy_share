@@ -1,12 +1,12 @@
-<div class="toyIndex-container" id="toys-index">
+<div class="container">
 	<div class="row">
 		<div class="col m12 center">
 			<h1>Toys looking for a new home</h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col s12 m2 searchBar">
-			<div class="search-toys">
+		<div class="col s12 m2">
+			<div>
 				<p>Filter toys by:</p>
 				<%= form_tag '', method: :get do %>
 					<div class="input-group">
@@ -37,7 +37,7 @@
 						<%= submit_tag "Filter", name: nil, class: "btn waves-effect waves-light filter-button" %>
 					</div>
 				<% end %>
-				<div class="clear-search">
+				<div>
 					<%= link_to "Reset", toys_path, class: "btn waves-effect waves-light filter-button" %>
 				</div>
 			</div>
@@ -49,12 +49,11 @@
 						<% group.each do |toy| %>
 							<%= link_to(toy_path(toy)) do %>
 							<div class="col s12 m4">
-								<div class="z-depth-2" id="blank-card">
-									<div class="valign-wrapper" id="card-image">
-										<%= image_tag toy.image.url(:large), class: "valign toy-image responsive-img" %>
+								<div class="z-depth-2 blank-card">
+									<div class="card-background" style="background-image: url(<%= toy.image.url(:large) %>)">
 									</div>
-									<div class="card-text center">
-										<p class="toy-name"><%= toy.name %></p>
+									<div class="center">
+										<p><%= toy.name %></p>
 									</div>
 								</div>
 							</div>
