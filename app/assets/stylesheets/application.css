@@ -85,3 +85,15 @@ a {
 .linkToSignUp{
 	color: #2bbbad;
 }
+.alert-danger{
+	position: absolute;
+	background-color: rgba(234, 15, 46, 0.6);
+	padding-left: 2%;
+	width: 100%;
+}
+.alert-success{
+	position: absolute;
+	background-color: rgba(150, 216, 153, 0.8);
+	width: 100%;
+	padding-left: 2%;
+}
