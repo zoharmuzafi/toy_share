@@ -98,7 +98,17 @@ body > div.row > div > ul.indicators {
 .div-header {
 	font-size: 50px;
 }
+
 .recentNameCard{
 	border-top: 1px solid black;
 	padding-bottom: 1%;
+}
+
+#footer{
+	position: absolute;
+  margin-bottom: 0%;	
+  background-color: rgba(120, 120, 120, 0.7); 
+  width: 100%;
+  margin-top: 5%;
+
 }
