@@ -6,7 +6,7 @@
 }
 
 #toys-button {
-	border-radius: 0 40px;
+	margin-right: 2%;
 }
 
 .toys-button {
@@ -66,9 +66,5 @@ textarea{
 	position: relative;
 }
 .toy-show {
-	background-repeat: no-repeat;	
-	background-size: cover !important;
-	border-radius: 40px;
-	position: absolute;
-	width: 100%
+	overflow: auto;
 }
