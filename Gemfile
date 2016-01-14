@@ -68,9 +68,6 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
-  gem 'omniauth-facebook'
-  gem 'ffaker'
-  gem 'faker'
 end
 
 end
