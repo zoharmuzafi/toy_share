@@ -32,4 +32,6 @@
     	$('#modal2').closeModal();
     });
 
+     $(".button-collapse").sideNav();
+
   });
