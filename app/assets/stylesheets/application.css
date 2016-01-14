@@ -16,6 +16,10 @@
  *= require font-awesome
  */
 
+
+body {
+	
+}
 .nav-bar {
 	background-color: rgba(13, 74, 121, 0.7);
 }
