@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
        return "#{f_name} #{l_name}"
     end 
 
+    def s3_credentials
+        { :bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET'] }
+    end
+
 # Using auth from omniauth 
 
     # Finding the user according to the provider and from the user id
