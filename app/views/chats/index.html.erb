@@ -1,48 +1,50 @@
-<div class="row">
-	<div class="col m4 s4 offset-m4 offset-s4 center-align">
-		<h1>Inbox</h1>
-	</div> 
-</div>
-<div class="col m4 s4 offset-m4 offset-s4 center-align">
-		<%= link_to "Refresh Inbox", chats_path, class: "btn" %>
-	</div> 
-</div><br>
-<% @chats.reverse.each do |chat| %>
+<div class="inbox-container">
 	<div class="row">
-		<div class="col m6 s6 offset-m3 offset-s3 center-align messageCard z-depth-2 blank-card">
-		<%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %>
-			<% messages = chat.messages %>
-			<% messages.each do |message| %>
-				<div class="row">
-					<div class="col m10 s10 offset-m1 offset-s1 left-align message">
-						<% message_owner = User.find(message.user_id) %>
-						<% if message_owner.id != current_user.id %>
-							<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
-							<%= "#{message.content}" %>
-							
-						<% else %>
-							<%= "you: #{message.content}" %>
-						<% end %>
-					</div>
-				</div>
-			<% end %>
-			<div class="row">
-					<div class="col m10 s10 offset-m1 offset-s1 left-align">
-						<%= form_for :message, :url => messages_path do |f| %>	
-							<div class="input-field">
-								<%= f.text_area :content, class: "reply" %>
-							</div>
-							<%= f.hidden_field :chat_id, :value => chat.id %>
-								<div class="input-field center-align">
-									<%= f.submit "Reply", class: "btn" %>					
-								</div>
+		<div class="col m4 s4 offset-m4 offset-s4 center-align">
+			<h1>Inbox</h1>
+		</div> 
+	</div>
+	<div class="col m4 s4 offset-m4 offset-s4 center-align">
+			<%= link_to "Refresh Inbox", chats_path, class: "btn" %>
+		</div> 
+	<br>
+	<% @chats.reverse.each do |chat| %>
+		<div class="row">
+			<div class="col m6 s6 offset-m3 offset-s3 center-align messageCard z-depth-2 blank-card">
+			<%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %>
+				<% messages = chat.messages %>
+				<% messages.each do |message| %>
+					<div class="row">
+						<div class="col m10 s10 offset-m1 offset-s1 left-align message">
+							<% message_owner = User.find(message.user_id) %>
+							<% if message_owner.id != current_user.id %>
+								<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
+								<%= "#{message.content}" %>
+								
+							<% else %>
+								<%= "you: #{message.content}" %>
 							<% end %>
+						</div>
 					</div>
+				<% end %>
+				<div class="row">
+						<div class="col m10 s10 offset-m1 offset-s1 left-align">
+							<%= form_for :message, :url => messages_path do |f| %>	
+								<div class="input-field">
+									<%= f.text_area :content, class: "reply" %>
+								</div>
+								<%= f.hidden_field :chat_id, :value => chat.id %>
+									<div class="input-field center-align">
+										<%= f.submit "Reply", class: "btn" %>					
+									</div>
+								<% end %>
+						</div>
+				</div>
 			</div>
 		</div>
-	</div>
-<% end %>
-		
+	<% end %>
+</div>
+
 		
 	
 
