@@ -84,3 +84,8 @@ a {
 .linkToSignUp{
 	color: #2bbbad;
 }
+
+.blank-card {
+	background-color: #FFFFFF !important;
+	border-radius: 40px !important;
+}
