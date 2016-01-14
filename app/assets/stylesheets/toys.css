@@ -4,9 +4,12 @@
 #toy-row {
 	margin-top: 60px;
 }
-
-#toys-button {
-	margin-right: 2%;
+.all-toys-button {
+	padding-right: 0 !important;
+}
+#all-toys-button {
+	border-radius: 0 40px 0 40px;
+	margin-right: 0;
 }
 
 .toys-button {
