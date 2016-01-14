@@ -12,7 +12,16 @@
 }
 .messageCard{
 	padding-top: 3% !important;
+
 }
 .allMessages{
 	/*display: none;
 }*/
+
+	background-color: white;
+	margin-bottom: 3% !important;
+}
+.inbox-container{
+	padding-bottom: 10%;
+}
+

@@ -1,67 +1,70 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="homepage-image row">
-	<div class="row">
-		<div class="col m12">
-			<div class="col m5 offset-m7" id="toy-header">
-				<h1 id="toy-headline">Give a toy, <br> get a toy</h1>
-				<h3 id="toy-subheadline">Find toys looking for a new home.</h3>
-			</div>
-		</div>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<div class="homepage-image row">
 		<div class="row">
-			<div class="col m4 offset-m8" id="homepage-button">
-				<%= link_to "Get Started", toys_path, class: "btn waves-effect waves-light" %>
+			<div class="col m12">
+				<div class="col m5 offset-m7" id="toy-header">
+					<h1 id="toy-headline">Give a toy, <br> get a toy</h1>
+					<h3 id="toy-subheadline">Find toys looking for a new home.</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col m4 offset-m8" id="homepage-button">
+					<%= link_to "Get Started", toys_path, class: "btn waves-effect waves-light" %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="row" id="lego-row">
-	<div class="col m12">
-		<div class="how-it-works">
-			<div class="col m4 center">
-				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/search.png" alt="">
-				<h4>Find Toys</h4>
-				<h6 class="howDetails">Look through the collection of toys in the area and find something you like</h6>
-			</div>
-			<div class="col m4 center">
-				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/chat.png" alt="">
-				<h4>Connect With Members</h4>
-				<h6 class="howDetails">Look at individual profiles and use integrated chat messages to get connected</h6>
-			</div>
-			<div class="col m4 center">
-				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/dollar-sign.png" alt="">
-				<h4>Get your Toys</h4>
-				<h6 class="howDetails">Members can always post and request toys. This service is completely free!</h6>
+	<div class="row" id="lego-row">
+		<div class="col m12">
+			<div class="how-it-works">
+				<div class="col m4 center">
+					<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/search.png" alt="">
+					<h4>Find Toys</h4>
+					<h6 class="howDetails">Look through the collection of toys in the area and find something you like</h6>
+				</div>
+				<div class="col m4 center">
+					<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/chat.png" alt="">
+					<h4>Connect With Members</h4>
+					<h6 class="howDetails">Look at individual profiles and use integrated chat messages to get connected</h6>
+				</div>
+				<div class="col m4 center">
+					<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/dollar-sign.png" alt="">
+					<h4>Get your Toys</h4>
+					<h6 class="howDetails">Members can always post and request toys. This service is completely free!</h6>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="added-toys">
-		<h1 class="div-header center">Toys looking for a new home</h1>
-		<div class="col m10 offset-m1">
-			<% if @toys.any? %>
-				<% @toys.each do |toy| %>
-					<div class="col s12 m4">
-						<div class="blank-card z-depth-2">
-							<div class="card-image valign-wrapper">
-								<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
+	<div class="row">
+		<div class="added-toys">
+			<h1 class="div-header center">Toys looking for a new home</h1>
+			<div class="col m10 offset-m1">
+				<% if @toys.any? %>
+					<% @toys.each do |toy| %>
+						<div class="col s12 m4">
+							<div class="blank-card z-depth-2">
+								<div class="card-image valign-wrapper">
+									<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
+								</div>
+								<div class="card-text center recentNameCard">
+					    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
+				  			</div>
 							</div>
-							<div class="card-text center recentNameCard">
-				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
-			  			</div>
 						</div>
-					</div>
+					<% end %>
 				<% end %>
-			<% end %>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="row" id="footer">
-	<div class="col m12 s12 team-link center">
-		<a class="modal-trigger btn" href="#team-modal">Meet ToyBin Team</a><br><br>
-		<small>© 2016 ToyBin team All Rights Reserved</small> 
+	<div class="row" id="footer">
+		<div class="col m12 s12 team-link center">
+			<a class="modal-trigger btn" href="#team-modal">Meet ToyBin Team</a><br><br>
+			<small>© 2016 ToyBin team All Rights Reserved</small> 
+		</div>
 	</div>
-</div>
+
+
 
 <!-- Modal Structure -->
  <div id="team-modal" class="modal bottom-sheet">
@@ -155,3 +158,4 @@
 		</div>
    </div>
  </div>	
+</div>
