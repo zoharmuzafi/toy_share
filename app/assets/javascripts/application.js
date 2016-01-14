@@ -37,8 +37,6 @@
 
     });
 
-    // $('#show-team').click(function(){
-    //     $('.about-team').toggle();
-    // });
+     $(".button-collapse").sideNav();
 
   });
