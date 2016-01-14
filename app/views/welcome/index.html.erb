@@ -18,26 +18,26 @@
 	<div class="col m10 offset-m1">
 		<div class="how-it-works">
 			<div class="col m4 center">
-				<i class="large material-icons">search</i>
-				<h3>Find toys for your kids</h3>
-				<h6>Look through the colleciton of toys in the area and find something you like.</h6>
+				<img src="https://s3-us-west-2.amazonaws.com/toybinwdi24/search.png" alt="">
+				<h4>Find Toys</h4>
+				<h6>Look through the collection of toys in the area and find something you like</h6>
 			</div>
 			<div class="col m4 center">
-				<i class="large material-icons">forum</i>
-				<h3>Chat with the toy giver</h3>
-				<h6>Set up a time to meet or arrange shipping methods.</h6>
+				<img src="https://s3-us-west-2.amazonaws.com/toybinwdi24/chat.png" alt="">
+				<h4>Connect With Members</h4>
+				<h6>Look at individual profiles and use integrated chat messages to get connected</h6>
 			</div>
 			<div class="col m4 center">
 				<i class="large material-icons">not_interested</i>
-				<h3>Toys are donated.</h3>
-				<h6>This is a free service that connects people.</h6>
+				<h4>Get your Toys</h4>
+				<h6>Members can always post and request toys. This service is completely free!</h6>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="row">
 	<div class="added-toys">
-		<h1 class="div-header center">Newest home seekers</h1>
+		<h1 class="div-header center">Toys looking for a new home</h1>
 		<div class="col m10 offset-m1">
 			<% if @toys.any? %>
 				<% @toys.each do |toy| %>
@@ -46,7 +46,7 @@
 							<div class="card-image valign-wrapper">
 								<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
 							</div>
-							<div class="card-text center">
+							<div class="card-text center recentNameCard">
 				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
 			  			</div>
 						</div>

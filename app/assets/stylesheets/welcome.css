@@ -81,7 +81,7 @@ body > div.row > div > ul.indicators {
 }
 #lego-row {
 	background-image: url("https://s3-us-west-2.amazonaws.com/toybinwdi24/cloud_background.png");
-	height: 500px;
+	padding-bottom: 5%;
 	color: #FFFFFF;
 }
 
@@ -97,4 +97,8 @@ body > div.row > div > ul.indicators {
 }
 .div-header {
 	font-size: 50px;
+}
+.recentNameCard{
+	border-top: 1px solid black;
+	padding-bottom: 1%;
 }
