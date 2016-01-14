@@ -9,6 +9,7 @@
 }
 .message, .messageCard{
 	border-radius: 40px;
+	background-color: white;
 }
 .messageCard{
 	padding-top: 3% !important;

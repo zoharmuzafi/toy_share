@@ -31,9 +31,12 @@
     $('.linkToSignUp').click(function(){
     	$('#modal2').closeModal();
     });
-    $('.seeMessages').on("click", function(event){
+    $('.seeMore').on("click", function(event){
         event.preventDefault();
-        $(this).closest('.chats').find('.allMessages').toggle();
+        var id = event.target.id;
+        console.log(id);
+        $(".allMessages").hide();
+        $("#chat"+id).show();
     });
 
      $(".button-collapse").sideNav();

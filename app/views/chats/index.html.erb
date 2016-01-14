@@ -1,27 +1,32 @@
-
-
-
 <div class="inbox-container">
 	<div class="row">
 		<div class="col m4 s4 offset-m4 offset-s4 center-align">
 			<h1>Inbox</h1>
 		</div> 
 	</div>
-	<div class="col m4 s4 offset-m4 offset-s4 center-align">
+	<div class="row">
+		<div class="col m4 s4 offset-m4 offset-s4 center-align">
 			<%= link_to "Refresh Inbox", chats_path, class: "btn" %>
 		</div> 
+	</div>
 	<br>
-	<% @chats.reverse.each do |chat| %>
-		<div class="row chats">
-			<div class="col m6 s6 offset-m3 offset-s3 center-align messageCard z-depth-2 blank-card">
-				<div>
+	<div class="row"> <!-- beginning of chat and messages row -->
+			<div class="col m4 offset-m1 center-align messageCard z-depth-2 blank-card">
+			<% @chats.reverse.each do |chat| %>
+				<div class="row">
+					<div class="col m12 left-align">
 						<%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %>
-						<button class="seeMessages">See More</button>
+						<%= link_to "- See More", "#", class: "seeMore", id: "#{chat.id}" %>
+					</div>
 				</div>
-				<div class="allMessages">
+			<% end %>		
+			</div>
+			<div class="col m6">
+				<% @chats.reverse.each do |chat| %>
 					<% messages = chat.messages %>
+					<div class="allMessages" id='chat<%= chat.id %>'>
 					<% messages.each do |message| %>
-						<div>
+						<div class="oneMessage">
 							<% message_owner = User.find(message.user_id) %>
 							<% if message_owner.id != current_user.id %>
 								<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
@@ -31,31 +36,34 @@
 							<% end %>
 						</div>
 					<% end %>
-					<div>
-						<%= form_for :message, :url => messages_path do |f| %>	
-							<div class="input-field">
-								<%= f.text_area :content, class: "reply" %>
-							</div>
-							<%= f.hidden_field :chat_id, :value => chat.id %>
-							<div class="input-field center-align">
-								<%= f.submit "Reply", class: "btn" %>					
-							</div>
-						<% end %>
+					<%= form_for :message, :url => messages_path do |f| %>	
+						<div class="input-field">
+							<%= f.text_area :content, class: "reply" %>
+						</div>
+						<%= f.hidden_field :chat_id, :value => chat.id %>
+						<div class="input-field center-align">
+							<%= f.submit "Reply", class: "btn" %>					
+						</div>
+					<% end %>
 					</div>
-				</div>
-			</div>
-		</div>
-	<% end %>
-</div>
-				
-				
-				
-		
-							
+				<% end %>
+			</div>	
+	</div> <!-- end of chat and messages row -->
+</div> <!-- end of containter -->
 
 
 
-</div>
+
+				
+				
+	
+				
+					
+	
+
+
+
+
 
 
 		
