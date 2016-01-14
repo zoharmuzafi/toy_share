@@ -47,10 +47,14 @@ before_filter :authorize, only: [:edit, :update, :destroy]
   end
 
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    @user = User.find(params[:id])
+  if @user.destroy
+      flash[:notice] = "Accout Deleted"
+      session[:user_id] = nil
+      redirect_to root_path
+    else
+      flash[:error] = @user.error.full_messages.join(", ")
+      redirect_to edit_user_path(@user)
     end
   end
 

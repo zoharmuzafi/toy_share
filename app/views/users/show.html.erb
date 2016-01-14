@@ -1,19 +1,20 @@
-<h1>Profile page</h1>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</br>
 <div class="row">
   <div class="col s8 m4">
-    <div class="card z-depth-2">
-      <div class="card-image">
-        <%= image_tag @user.avatar.url(:large) %>
+    <div class="card z-depth-2"id="blank-card">
+      <div class= "valign-wrapper" id="card-image">
+        <%= image_tag @user.avatar.url(:large), class: "valign toy-image responsive-img" %>
         <span class="card-title"></span>
       </div>
       <div class="card-content">
-        <h5><%= @user.f_name %> <%= @user.l_name %></h5>
+        <h5><%= @user.f_name %> <%= @user.l_name %>    <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %> </h5>
         <p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
         <h5>Bio:</h5>
         <p> <%= @user.bio %> </p>
       </div>
       <div class="card-action">
-        <p><%= link_to 'Edit', edit_user_path(@user), class: "btn-floating btn-large green" %></p>
+        <%= link_to 'Add new toy', new_toy_path(@toy), class: "waves-effect waves-light btn" %>
       </div>
     </div>
   </div>
@@ -23,31 +24,24 @@
     <div class="row">
       <% group.each do |t| %>
       <div class="col s12 m4">
-      <div class="card z-depth-1">
-        <div class="card-image ">
-          <%= image_tag t.image.url(:medium) %>
+        <div class="card z-depth-1" id="blank-card">
+          <div class= "valign-wrapper" id="card-image">
+            <%= image_tag t.image.url(:medium), class: "valign toy-image responsive-img" %>
+          </div>
+          <div class="card-content">
+            <p><%= t.name %></p>
+            <p><%= t.description %></p>
+            <%= link_to 'mode_edit', edit_toy_path(t), class: "material-icons" %> <%= link_to 'delete',toy_path(t), data: {confirm: "Are you sure?"}, :method => :delete, class: "material-icons" %>
+            <p><small><%= t.created_at.strftime("%A, %B %d") %></small></p>
+          </div>
         </div>
-        <div class="card-content">
-          <p><%= t.name %></p>
-          <p><%= t.description %></p>
-          <p><small><%= t.created_at.strftime("%A, %B %d") %></small></p>
-        </div>
-      </div>
       </div>
       <% end %>
     </div>
-      <% end %>
-      <%end%>
-      <div class="pagination">
-<a><%= will_paginate @toys, class: "waves-effect waves-light btn" %></a>
-</div>
+    <% end %>
+    <%end%>
+    <div class="pagination">
+      <a><%= will_paginate @toys, class: "waves-effect waves-light btn" %></a>
+    </div>
   </div>
 </div>
-
-  
-
-
-
-
-
-
