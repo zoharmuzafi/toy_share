@@ -15,22 +15,22 @@
 	</div>
 </div>
 <div class="row" id="lego-row">
-	<div class="col m10 offset-m1">
+	<div class="col m12">
 		<div class="how-it-works">
 			<div class="col m4 center">
-				<img src="https://s3-us-west-2.amazonaws.com/toybinwdi24/search.png" alt="">
+				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/search.png" alt="">
 				<h4>Find Toys</h4>
-				<h6>Look through the collection of toys in the area and find something you like</h6>
+				<h6 class="howDetails">Look through the collection of toys in the area and find something you like</h6>
 			</div>
 			<div class="col m4 center">
-				<img src="https://s3-us-west-2.amazonaws.com/toybinwdi24/chat.png" alt="">
+				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/chat.png" alt="">
 				<h4>Connect With Members</h4>
-				<h6>Look at individual profiles and use integrated chat messages to get connected</h6>
+				<h6 class="howDetails">Look at individual profiles and use integrated chat messages to get connected</h6>
 			</div>
 			<div class="col m4 center">
-				<i class="large material-icons">not_interested</i>
+				<img class="howImg" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/dollar-sign.png" alt="">
 				<h4>Get your Toys</h4>
-				<h6>Members can always post and request toys. This service is completely free!</h6>
+				<h6 class="howDetails">Members can always post and request toys. This service is completely free!</h6>
 			</div>
 		</div>
 	</div>
@@ -57,8 +57,9 @@
 	</div>
 </div>
 <div class="row" id="footer">
-	<div class="col m12 s12 team-link left">
-		<h6>© 2016-2026 ToyBin team All Rights Reserved. To learn more about the ToyBin Team <a class="modal-trigger" href="#team-modal">click here</a></h6>
+	<div class="col m12 s12 team-link center">
+		<a class="modal-trigger btn" href="#team-modal">Meet ToyBin Team</a><br><br>
+		<small>© 2016 ToyBin team All Rights Reserved</small> 
 	</div>
 </div>
 
@@ -66,70 +67,91 @@
  <div id="team-modal" class="modal bottom-sheet">
    <div class="modal-content">
      <div class="row">
-			<div class="about-team">
-				<div class="col m10 offset-m1">
-					<div class="col s12 m3">
-						<div class="blank-card z-depth-2">
-							<div class="team-image valign-wrapper">
-								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAVRAAAAJDBjNGMyN2YxLWM1ZDUtNDE1Mi04ZTM2LWRkMzUwNmQwNzU5MQ.jpg", class: "team-image") %>
-							</div>
-							<div class="divider"></div>
-							<div class="team-name">
-								<p class="center">Andre Massey</p>
-							</div>
-							<div class="team-email center">
-	    					<a href="https://www.linkedin.com/in/andremassey1" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-	    					<a href="https://github.com/DreTGiant" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-  						</div>
+			<div class="col m3 s3">
+				<div class="blank-card z-depth-2">
+					<div class="team-image valign-wrapper">
+						<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAVRAAAAJDBjNGMyN2YxLWM1ZDUtNDE1Mi04ZTM2LWRkMzUwNmQwNzU5MQ.jpg", class: "team-image") %>
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col m12 s12 center">
+							<p class="center">Andre Massey</p>
 						</div>
 					</div>
-					<div class="col s12 m3">
-						<div class="blank-card z-depth-2">
-							<div class="team-image valign-wrapper">
-								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAIMAAAAJGYyMmMwOGE2LTMwODgtNDNiYi1iOTI5LTU1M2MxY2Q0YTAwYg.jpg", class: "team-image") %>
-							</div>
-							<div class="divider"></div>
-							<div class="team-name">
-								<p class="center">Cynthia Salinas</p>
-							</div>
-							<div class="team-email center">
-				    		<a href="https://www.linkedin.com/in/cynthiagsalinas" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-	    					<a href="https://github.com/Cyndy528" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-			  			</div>
+					<div class="row">
+						<div class="col m6 s6 right-align">
+							<a target="_blank" href="https://www.linkedin.com/in/andremassey1" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/linkedin_logo.png" alt=""></a>
+						</div>
+						<div class="col m6 s6 left-align">
+							<a target="_blank" href="https://github.com/DreTGiant" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/github.png" alt=""></a>
 						</div>
 					</div>
-					<div class="col s12 m3">
-						<div class="blank-card z-depth-2">
-							<div class="team-image valign-wrapper">
-								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAXLAAAAJDg5M2E5YTIwLTdlZTMtNDE2OC1iYzVlLThlMzMwZmUxYmExZA.jpg", class: "team-image") %>
-							</div>
-							<div class="divider"></div>
-							<div class="team-name">
+				</div>	
+			</div>	
+			<div class="col m3 s3">
+				<div class="blank-card z-depth-2">
+					<div class="team-image valign-wrapper">
+						<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAIMAAAAJGYyMmMwOGE2LTMwODgtNDNiYi1iOTI5LTU1M2MxY2Q0YTAwYg.jpg", class: "team-image") %>
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col m12 s12 center">
+							<p class="center">Cynthia Salinas</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m6 s6 right-align">
+							<a target="_blank" href="https://www.linkedin.com/in/cynthiagsalinas" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/linkedin_logo.png" alt=""></a>
+						</div>
+						<div class="col m6 s6 left-align">
+							<a target="_blank" href="https://github.com/Cyndy528" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/github.png" alt=""></a>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="col m3 s3">
+				<div class="blank-card z-depth-2">
+					<div class="team-image valign-wrapper">
+						<%= image_tag("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAR9AAAAJDE4ZjU0Y2U5LTdlZDgtNGE2NC1iYjc4LTIzNjE5NzM1YjBlNg.jpg", class: "team-image") %>
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col m12 s12 center">
+							<p class="center">Michael Rockway</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m6 s6 right-align">
+							<a target="_blank" href="https://www.linkedin.com/in/mrockway" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/linkedin_logo.png" alt=""></a>
+						</div>
+						<div class="col m6 s6 left-align">
+							<a target="_blank" href="https://github.com/mrockway" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/github.png" alt=""></a>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="col m3 s3">
+				<div class="blank-card z-depth-2">
+					<div class="team-image valign-wrapper">
+							<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAXLAAAAJDg5M2E5YTIwLTdlZTMtNDE2OC1iYzVlLThlMzMwZmUxYmExZA.jpg", class: "team-image") %>
+						</div>
+						<div class="divider"></div>
+						<div class="row">
+							<div class="col m12 s12 center">
 								<p class="center">Zohar Muzafi</p>
 							</div>
-							<div class="team-email center">
-				    		<a href="https://www.linkedin.com/in/zoharmuzafi" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-	    					<a href="https://github.com/zoharmuzafi" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-			  			</div>
 						</div>
-					</div>
-					<div class="col s12 m3">
-						<div class="blank-card z-depth-2">
-							<div class="team-image valign-wrapper">
-								<%= image_tag("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAR9AAAAJDE4ZjU0Y2U5LTdlZDgtNGE2NC1iYjc4LTIzNjE5NzM1YjBlNg.jpg", class: "team-image") %>
+						<div class="row">
+							<div class="col m6 s6 right-align">
+								<a target="_blank" href="https://www.linkedin.com/in/zoharmuzafi" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/linkedin_logo.png" alt=""></a>
 							</div>
-								<div class="divider"></div>
-								<div class="team-name">
-									<p class="center">Michael Rockway</p>
-								</div>
-							<div class="team-email center">
-				    		<a href="https://www.linkedin.com/in/mrockway" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-	    					<a href="https://github.com/mrockway" class="individual-email btn waves-effect waves-light"><img src="" alt=""></a>
-			  			</div>
+							<div class="col m6 s6 left-align">
+								<a target="_blank" href="https://github.com/zoharmuzafi" class="individual-email waves-effect waves-light"><img class="social" src="https://s3-us-west-2.amazonaws.com/toybinwdi24/github.png" alt=""></a>
+							</div>
 						</div>
 					</div>
-				</div>
+  			</div>	
 			</div>
-   	</div>
- 	</div>	
-</div>
+		</div>
+   </div>
+ </div>	
