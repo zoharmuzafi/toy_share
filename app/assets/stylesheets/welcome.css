@@ -80,14 +80,14 @@ body > div.row > div > ul.indicators {
 	max-width: 100%;
 }
 #lego-row {
-	background-image: url("https://s3-us-west-2.amazonaws.com/toybinwdi24/cloud_background.png");
-	height: 500px;
+	background: #2B98ED;
+	padding-bottom: 5%;
 	color: #FFFFFF;
 }
 
 .how-it-works {
 	margin-top: 50px;
-	text-shadow: 2px 2px 2px #141414;
+	
 }
 .team-link {
 	padding-bottom: 60px;
@@ -96,5 +96,30 @@ body > div.row > div > ul.indicators {
 	max-height: 100%;
 }
 .div-header {
-	font-size: 50px;
+	font-size: 40px;
+}
+
+.recentNameCard{
+	border-top: 1px solid black;
+	padding-bottom: 1%;
+}
+
+#footer{
+	position: absolute;
+  margin-bottom: 0%;	
+  background-color: rgba(13, 74, 121, 0.3); 
+  width: 100%;
+  margin-top: 5%;
+  padding: 3% 0% 0% 0%;
+}
+.howImg{
+	width: 20%;
+}
+.howDetails{
+	font-size: 17px;
+	font-weight: 200;
+}
+.social{
+	width: 30%;
+	display: inline-block;
 }
