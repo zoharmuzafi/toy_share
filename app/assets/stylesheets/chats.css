@@ -13,3 +13,6 @@
 .messageCard{
 	padding-top: 3% !important;
 }
+.allMessages{
+	display: none;
+}

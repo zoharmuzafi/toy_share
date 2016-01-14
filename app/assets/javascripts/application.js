@@ -31,6 +31,11 @@
     $('.linkToSignUp').click(function(){
     	$('#modal2').closeModal();
     });
+    $('.seeMessages').click(function(){
+        $('.oneMessage').toggle();
+        $('.allMessages').toggle();
+
+    });
 
     // $('#show-team').click(function(){
     //     $('.about-team').toggle();

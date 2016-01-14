@@ -3,24 +3,38 @@
 		<h1>Inbox</h1>
 	</div> 
 </div>
-<% @chats.each do |chat| %>
+<% @chats.each_with_index do |chat, index| %>
 	<div class="row">
 		<div class="col m6 s6 offset-m3 offset-s3 center-align messageCard z-depth-2 blank-card">
 		<%= " RE:" %> <%= link_to "#{(Toy.find(chat.toy_id)).name}", toy_path(Toy.find(chat.toy_id)) %>
 			<% messages = chat.messages %>
-			<% messages.each do |message| %>
+			<div class="oneMessage">
 				<div class="row">
 					<div class="col m10 s10 offset-m1 offset-s1 left-align message">
-						<% message_owner = User.find(message.user_id) %>
+						<% message_owner = User.find(messages[0].user_id) %>
 						<% if message_owner.id != current_user.id %>
 							<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
-							<%= "#{message.content}" %>
-							
+							<%= "#{message.content}" %>	
 						<% else %>
-							<%= "you: #{message.content}" %>
+							<%= "you: #{messages[0].content}" %>
 						<% end %>
+						<a href="" class='seeMessages'+index>See More</a>
 					</div>
-				</div>
+				</div>	
+			</div>
+			<div id="'allMessages'+index">
+				<% messages.each do |message| %>
+					<div class="row">
+						<div class="col m10 s10 offset-m1 offset-s1 left-align message">
+							<% message_owner = User.find(message.user_id) %>
+							<% if message_owner.id != current_user.id %>
+								<%= link_to "#{message_owner.f_name} #{message_owner.l_name}:", user_path(message_owner) %>
+								<%= "#{message.content}" %>		
+							<% else %>
+								<%= "you: #{message.content}" %>
+							<% end %>
+						</div>
+					</div>
 			<% end %>
 			<div class="row">
 					<div class="col m10 s10 offset-m1 offset-s1 left-align">
@@ -34,7 +48,8 @@
 								</div>
 							<% end %>
 					</div>
-			</div>
+				</div>
+			</div>	
 		</div>
 	</div>
 <% end %>
