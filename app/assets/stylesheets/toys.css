@@ -27,7 +27,7 @@ textarea{
 	height: 55% !important;
 }
 
-#card-image {
+.card-image {
 	height: 200px;
 }
 
@@ -62,6 +62,7 @@ textarea{
 	background-size: cover !important;
 	border-radius: 40px 40px 0 0 !important;
 	height: 250px !important;
+	background-position: center;
 }
 #pic-toy {
 	position: relative;
