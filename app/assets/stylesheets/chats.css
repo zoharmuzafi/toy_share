@@ -1,0 +1,15 @@
+/*// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+.reply{
+	height: 5rem;
+}
+.message>a, .messageCard>a{
+	color: #039BE5;
+}
+.message, .messageCard{
+	border-radius: 40px;
+}
+.messageCard{
+	padding-top: 3% !important;
+}

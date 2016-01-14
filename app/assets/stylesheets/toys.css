@@ -1,0 +1,63 @@
+/*// Place all the styles related to the toys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+#toys-button {
+	border-radius: 0 40px;
+}
+.toys-button {
+	width: 100%;
+}
+.filter-button {
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+textarea{
+	height: 100rem;
+}
+
+.modalMessage{
+	width: 40% !important;
+	height: 55% !important;
+}
+
+#card-image {
+	height: 200px;
+}
+
+#blank-card {
+	border-radius: 40px;
+	min-height: 300px;
+}
+
+.select-dropdown {
+	color: #2B98ED;
+}
+
+.select-wrapper > ul > li > span {
+	color: #2B98ED;
+}
+
+#toy-container {
+	border-radius: 40px;
+	margin-top: 40px;
+	max-height: 500px;
+}
+
+#toys-row {
+	padding-bottom: 10px;
+}
+
+.toy-image {
+	border-radius: 40px 40px 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+#show-toy-image {
+	border-radius: 40px;
+	max-height: 100%;
+}

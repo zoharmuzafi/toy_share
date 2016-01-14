@@ -1,2 +1,130 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="homepage-image row">
+	<div class="row">
+		<div class="col m12">
+			<div class="col m5 offset-m7" id="toy-header">
+				<h1 id="toy-headline">Give a toy, <br> get a toy</h1>
+				<h3 id="toy-subheadline">Find toys looking for a new home.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m4 offset-m8" id="homepage-button">
+				<%= link_to "Get Started", toys_path, class: "btn waves-effect waves-light" %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" id="lego-row">
+	<div class="col m10 offset-m1">
+		<div class="how-it-works">
+			<div class="col m4 center">
+				<i class="large material-icons">search</i>
+				<h3>Find toys for your kids</h3>
+				<h6>Look through the colleciton of toys in the area and find something you like.</h6>
+			</div>
+			<div class="col m4 center">
+				<i class="large material-icons">forum</i>
+				<h3>Chat with the toy giver</h3>
+				<h6>Set up a time to meet or arrange shipping methods.</h6>
+			</div>
+			<div class="col m4 center">
+				<i class="large material-icons">not_interested</i>
+				<h3>Toys are donated.</h3>
+				<h6>This is a free service that connects people.</h6>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="added-toys">
+		<h1 class="div-header center">Newest home seekers</h1>
+		<div class="col m10 offset-m1">
+			<% if @toys.any? %>
+				<% @toys.each do |toy| %>
+					<div class="col s12 m4">
+						<div class="blank-card z-depth-2">
+							<div class="card-image valign-wrapper">
+								<%= image_tag toy.image.url(:large), class: "valign toys-images" %>
+							</div>
+							<div class="card-text center">
+				    		<p><%= link_to "#{toy.name}", toy_path(toy) %></p>
+			  			</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="team-link center">
+	<h6><a class="modal-trigger" href="#team-modal">Learn more about the ToyBin Team</a></h6>
+	
+</div>
+
+<!-- Modal Structure -->
+ <div id="team-modal" class="modal bottom-sheet">
+   <div class="modal-content">
+     <div class="row">
+			<div class="about-team">
+				<div class="col m10 offset-m1">
+					<div class="col s12 m3">
+						<div class="blank-card z-depth-2">
+							<div class="team-image valign-wrapper">
+								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAVRAAAAJDBjNGMyN2YxLWM1ZDUtNDE1Mi04ZTM2LWRkMzUwNmQwNzU5MQ.jpg", class: "team-image") %>
+							</div>
+							<div class="divider"></div>
+							<div class="team-name">
+								<p class="center">Andre Massey</p>
+							</div>
+							<div class="team-email center">
+	    					<a href="https://www.linkedin.com/in/andremassey1" class="individual-email btn waves-effect waves-light">Contact Me</a>
+  						</div>
+						</div>
+					</div>
+					<div class="col s12 m3">
+						<div class="blank-card z-depth-2">
+							<div class="team-image valign-wrapper">
+								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAIMAAAAJGYyMmMwOGE2LTMwODgtNDNiYi1iOTI5LTU1M2MxY2Q0YTAwYg.jpg", class: "team-image") %>
+							</div>
+							<div class="divider"></div>
+							<div class="team-name">
+								<p class="center">Cynthia Salinas</p>
+							</div>
+							<div class="team-email center">
+				    		<a href="https://www.linkedin.com/in/cynthiagsalinas" class="individual-email btn waves-effect waves-light">Contact Me</a>
+			  			</div>
+						</div>
+					</div>
+					<div class="col s12 m3">
+						<div class="blank-card z-depth-2">
+							<div class="team-image valign-wrapper">
+								<%= image_tag("https://media.licdn.com/media/AAEAAQAAAAAAAAXLAAAAJDg5M2E5YTIwLTdlZTMtNDE2OC1iYzVlLThlMzMwZmUxYmExZA.jpg", class: "team-image") %>
+							</div>
+							<div class="divider"></div>
+							<div class="team-name">
+								<p class="center">Zohar Muzafi</p>
+							</div>
+							<div class="team-email center">
+				    		<a href="https://www.linkedin.com/in/zoharmuzafi" class="individual-email btn waves-effect waves-light">Contact Me</a>
+			  			</div>
+						</div>
+					</div>
+					<div class="col s12 m3">
+						<div class="blank-card z-depth-2">
+							<div class="team-image valign-wrapper">
+								<%= image_tag("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAR9AAAAJDE4ZjU0Y2U5LTdlZDgtNGE2NC1iYjc4LTIzNjE5NzM1YjBlNg.jpg", class: "team-image") %>
+							</div>
+								<div class="divider"></div>
+								<div class="team-name">
+									<p class="center">Michael Rockway</p>
+								</div>
+							<div class="team-email center">
+				    		<a href="https://www.linkedin.com/in/mrockway" class="individual-email btn waves-effect waves-light">Contact Me</a>
+			  			</div>
+						</div>
+					</div>
+				</div>
+			</div>
+   	</div>
+ 	</div>	
+</div>
