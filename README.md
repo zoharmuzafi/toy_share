@@ -20,7 +20,12 @@ FaceBook API, Integerated Chat Message, LogoMakr, PaperClip, Heroku, Amazon Web 
 
 ##Project Structure
 
-Facebook and Rspec - 
+_Facebook and Rspec (Cynthia)_ - Members have an option to login using their Facebook account, which will make it an easy to access the site. Testing was done on about 50% of application. The toy and user model were tested using RSpec as well as the toy controller. 
+
+
+
+
+
 
 
 ##ToyBin 
