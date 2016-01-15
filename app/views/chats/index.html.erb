@@ -14,6 +14,13 @@
 					<%= link_to "Check Messages", chats_path, class: "btn" %>
 				</div> 
 			</div>
+			<% if @chats.length == 0 %>
+				<div class="row">
+					<div class="col m12 center">
+						<p><i>You have no messages</i></p>
+					</div>
+				</div>
+			<% end %>
 			<% @chats.reverse.each do |chat| %>
 				<div class="row chatHeader">
 					<div class="col m12 left-align">
