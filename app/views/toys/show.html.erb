@@ -1,8 +1,8 @@
 <div class="row" id="toy-row">
-	<div class="col m8 offset-m2 z-depth-2 blank-card">
-		<div class="row">
-			<div class="right-align col m12">
-				<%= link_to "Back to all toys", toys_path, class: "btn waves-effect waves-light", id: "toys-button" %>
+	<div class="col m8 offset-m2 z-depth-2 blank-card all-toys-button">
+		<div class="row all-toys-button">
+			<div class="right-align col m12 all-toys-button">
+				<%= link_to "Back to all toys", toys_path, class: "btn waves-effect waves-light", id: "all-toys-button" %>
 			</div>
 		</div>
 		<div class="row valign-wrapper">
@@ -23,10 +23,10 @@
 							<%= link_to "Edit Toy", edit_toy_path(@toy), class: "btn waves-effect waves-light" %>
 							<%= link_to "Remove Toy", toy_path(@toy), method: :delete, class: "btn waves-effect waves-light" %>
 						<% else %>
-							<%= link_to "Send #{(User.find(@toy.user_id)).f_name} a private message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
+							<%= link_to "Send a message", "#modal1", :class => "waves-effect waves-light btn modal-trigger" %>
 						<% end %>		
 					<% else %>
-						<%= link_to "Want this toy? please log in", "#modal2", :class => "waves-effect waves-light btn modal-trigger" %>
+						<%= link_to "Send a message", "#modal2", :class => "waves-effect waves-light btn modal-trigger" %>
 					<% end %>
 				</div>
 			</div>	

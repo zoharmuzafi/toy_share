@@ -8,12 +8,16 @@
         <div class="card-content">
           <h5><%= @user.f_name %> <%= @user.l_name %>    <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %> </h5>
           <p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
+          <h5>City:</h5>
+          <p><%= link_to "#{@user.city.name}", toys_path(name: "#{@user.city.name}")  %></p>
           <h5>Bio:</h5>
           <p> <%= @user.bio %> </p>
         </div>
-        <div class="card-action">
-          <%= link_to 'Add new toy', new_toy_path(@toy), class: "waves-effect waves-light btn" %>
-        </div>
+        <%= link_to new_toy_path do %>
+          <div class="user-new-toy waves-effect waves-light btn">
+            <p>Add a toy</p>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col s7 offset-s3 m8">

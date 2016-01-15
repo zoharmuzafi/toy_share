@@ -2,6 +2,7 @@
 	background-image: url("https://s3-us-west-2.amazonaws.com/toybinwdi24/stuffed-animal-crop.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 	width: 100%;
 	padding: 10% 0 20% 0;
 	margin-bottom: 0 !important;
@@ -27,6 +28,9 @@ body > div.row > div > ul.indicators > li.indicator-item {
 }
 body > div.row > div > ul.indicators {
 	z-index: 2;
+}
+.row .col.s12{
+	padding-bottom: 10px;
 }
 #toyimage {
 	height: 500px;

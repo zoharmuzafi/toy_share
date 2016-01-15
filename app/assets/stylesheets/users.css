@@ -22,4 +22,15 @@
 }
 .unavailableToy{
 	opacity: 0.5;
+
+}
+
+.user-new-toy {
+	background-color: #F9FA82 !important;
+	border-radius: 0 0 40px 40px !important;
+	color: #000000 !important;
+	width: 100%;
+}
+body > div.container > div > div.col.s7.offset-s3.m4 > div > a > div > p {
+	margin: 0 !important;
 }

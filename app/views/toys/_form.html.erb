@@ -24,6 +24,7 @@
 </div>
 <div class="hidden-fields">
 	<%= f.hidden_field :city_id, value: "#{current_user.city_id}" %>
+	<%= f.hidden_field :availible, value: true %>
 </div>
 <div class="input-field">
 	<%= f.label :image, "Upload picutres of your toy" %>

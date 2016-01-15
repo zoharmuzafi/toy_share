@@ -22,14 +22,9 @@
         </div>
         <div class="row">
         <div class="input-field col s12">
-        <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">New York</option>
-          <option value="2">San Francisco</option>
-          <option value="3">Los Angeles</option>
-          <option value="4">Kansas City</option>
-        </select>
-        <label>City</label>
+        <div class="input-field">
+        <%= f.select :city_id, options_from_collection_for_select((City.all), 'id', 'name') %>
+      </div>
       </div>
         </div>
         <div class="row">
