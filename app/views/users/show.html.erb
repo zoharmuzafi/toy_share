@@ -7,17 +7,23 @@
           <span class="card-title"></span>
         </div>
         <div class="card-content">
-          <h5><%= @user.f_name %> <%= @user.l_name %>    <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %> </h5>
+          <h5><%= @user.f_name %> <%= @user.l_name %>
+            <% if current_user == @user %>
+              <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %>
+            <% end %>
+          </h5>
           <p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
           <h5>City:</h5>
           <p><%= link_to "#{@user.city.name}", toys_path(name: "#{@user.city.name}")  %></p>
           <h5>Bio:</h5>
           <p> <%= @user.bio %> </p>
         </div>
-        <%= link_to new_toy_path do %>
-          <div class="user-new-toy waves-effect waves-light btn">
-            <p>Add a toy</p>
-          </div>
+        <% if current_user == @user %>
+          <%= link_to new_toy_path do %>
+            <div class="user-new-toy waves-effect waves-light btn">
+              <p>Add a toy</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -33,31 +39,39 @@
             <div class="card-content">
               <p><%= t.name %></p>
               <p class="truncate"><%= t.description %></p>
-              <%= link_to 'mode_edit', edit_toy_path(t), class: "material-icons" %> <%= link_to 'delete',toy_path(t), data: {confirm: "Are you sure?"}, :method => :delete, class: "material-icons" %>
+              <% if current_user == @user %>
+                <%= link_to 'mode_edit', edit_toy_path(t), class: "material-icons" %> <%= link_to 'delete',toy_path(t), data: {confirm: "Are you sure?"}, :method => :delete, class: "material-icons" %>
+              <% end %>
               <p><small><%= t.created_at.strftime("%A, %B %d") %></small></p>
             </div>
             <div>
-            <%= form_for :toy, url:"/toys/#{t.id}", :method =>:put do |f| %>
-                <% if t.available %>
-                 <% @val = false %>
-                <% else %>
-                  <% @val = true %>
-                <% end %>
-                <%= f.hidden_field :available, value: @val %>
-                <input type="submit" value='<%= t.available ? 'unavailable?' : 'available?' %>' class='givenToy waves-effect waves-light btn <%= t.available ? 'available' : 'unavailable' %>' id='<%= "#{t.id}" %>'>
-            <% end %>  
+            <% if current_user == @user %>
+              <%= form_for :toy, url:"/toys/#{t.id}", :method =>:put do |f| %>
+                  <% if t.available %>
+                   <% @val = false %>
+                  <% else %>
+                    <% @val = true %>
+                  <% end %>
+                  <%= f.hidden_field :available, value: @val %>
+                  <input type="submit" value='<%= t.available ? 'unavailable?' : 'available?' %>' class='givenToy waves-effect waves-light btn <%= t.available ? 'available' : 'unavailable' %>' id='<%= "#{t.id}" %>'>
+              <% end %>  
+            <% end %>
             </div>
           </div>
         </div>
         <% end %>
       </div>
       <% end %>
-      <%end%>
       <div class="apple_pagination">
     <div class="page_info">
       <%= page_entries_info @toys %>
     </div>
     <%= will_paginate @toys, :container => false, class: "waves-effect waves-light btn" %>
+  </div>
+  <% else %>
+  <div class="no-toys center">
+    <%= link_to "Add a Toy", new_toy_path, class: "no-toys-button waves-effect waves-light btn" %>
+  <% end %>
   </div>
     </div>
   </div>
