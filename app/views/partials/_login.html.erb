@@ -14,7 +14,7 @@
 
 		<%= form_tag '/login' do %>
 		<div class="input-field">
-			<%= label_tag(:email) %>
+			<%= label_tag(:email), autofocus: true %>
 			<%= email_field_tag :email %>
 		</div>
 		<div class="input-field">
