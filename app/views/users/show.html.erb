@@ -8,6 +8,8 @@
         <div class="card-content">
           <h5><%= @user.f_name %> <%= @user.l_name %>    <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %> </h5>
           <p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
+          <h5>City:</h5>
+          <p><%= link_to "#{@user.city.name}", toys_path(name: "#{@user.city.name}")  %></p>
           <h5>Bio:</h5>
           <p> <%= @user.bio %> </p>
         </div>
