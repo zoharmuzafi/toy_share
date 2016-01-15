@@ -11,9 +11,11 @@
           <h5>Bio:</h5>
           <p> <%= @user.bio %> </p>
         </div>
-        <div class="card-action">
-          <%= link_to 'Add new toy', new_toy_path(@toy), class: "waves-effect waves-light btn" %>
-        </div>
+        <%= link_to new_toy_path do %>
+          <div class="user-new-toy waves-effect waves-light btn">
+            <p>Add a toy</p>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col s7 offset-s3 m8">
