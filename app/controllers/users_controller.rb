@@ -31,7 +31,7 @@ before_filter :get_user, except: [:new, :create, :index]
       @toys = @user.toys.paginate(:page => params[:page], :per_page => 6)
       @cities = City.all
     else
-      redirect_to root_path
+      redirect_to toys_path
     end
   end
 
@@ -43,7 +43,7 @@ before_filter :get_user, except: [:new, :create, :index]
         redirect_to user_path(current_user)
       end
     else
-      redirect_to root_path
+      redirect_to toys_path
     end
   end
 
