@@ -42,4 +42,3 @@
      $(".button-collapse").sideNav();
 
   });
-  
