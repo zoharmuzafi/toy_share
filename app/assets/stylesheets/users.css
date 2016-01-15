@@ -34,3 +34,12 @@
 body > div.container > div > div.col.s7.offset-s3.m4 > div > a > div > p {
 	margin: 0 !important;
 }
+
+.no-toys {
+	margin-top: 25px;
+}
+
+.no-toys-button {
+	background-color: #F9FA82 !important;
+	color: #000000 !important;
+}
