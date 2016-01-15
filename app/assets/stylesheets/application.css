@@ -90,7 +90,7 @@ a {
   color: white !important;
 }
 .linkToSignUp{
-	color: #2bbbad;
+	color: #2DA0FA;
 }
 
 .blank-card {
@@ -158,3 +158,17 @@ h1 {
 .apple_pagination a:hover, .apple_pagination a:focus {
 	text-decoration: underline; 
 }
+.input-field :focus {
+     border-bottom: 1px solid #2DA0FA !important;
+     box-shadow: 0 1px 0 0 #2DA0FA !important;
+   }
+.input-field label {	
+    color: #2DA0FA !important;
+   }
+.input-field + label {
+     color: #2DA0FA !important;
+   }
+   .input-field [type="radio"]:checked + label:after{
+   	background-color: #2DA0FA;
+   	border-color: #2DA0FA; 
+   }
