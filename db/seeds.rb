@@ -14,7 +14,7 @@ toys = Toy.create([	{ name: "American Girl Doll", description: "American Girl do
 cities = City.create ([{name: "New York"}, {name: "San Francisco"}, {name: "Los Angeles"}, {name: "Kansas City"}])
 
 
-user1 = User.create([{ f_name: "Michael", l_name: "Rockway", email: "email@email.com", password: "123456", bio: "Here is a  bio", city_id: 1, image: "https://s3-us-west-2.amazonaws.com/toybinwdi24/face.png" }])
+user1 = User.create([{ f_name: "Michael", l_name: "Rockway", email: "email@email.com", password: "123456", bio: "Here is a  bio", city_id: 1, avatar: "https://s3-us-west-2.amazonaws.com/toybinwdi24/face.png" }])
 user2 = User.create([{ f_name: "Zohar", l_name: "Muzafi", email: "email.u@email.com", password: "123456", bio: "Here is my bio", city_id: 2 }])
 user3 = User.create([{ f_name: "Cynthia", l_name: "Cynthia", email: "cynthia@email.com", password: "123456", bio: "Here is a  bio", city_id: 4 }])
 user3 = User.create([{ f_name: "Andre", l_name: "Andre", email: "andre@email.com", password: "123456", bio: "Here is a  bio", city_id: 3 }])
