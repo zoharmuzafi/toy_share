@@ -4,11 +4,12 @@ class ToysController < ApplicationController
   
   def index
     @cities = City.find_by_name(params[:name]) || City.all
-    @toys = Toy.all
+    @toys = Toy.where(available: true)
+   
     if params[:name].present?   
-      @toys = Toy.where(city_id: @cities.id).by_gender(params[:gender]).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
+      @toys = Toy.where(city_id: @cities.id).where(available: true).by_gender(params[:gender]).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
     else
-      @toys = Toy.by_gender(params[:gender]).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
+      @toys = Toy.by_gender(params[:gender]).where(available: true).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
     end
   end
 
@@ -23,7 +24,7 @@ class ToysController < ApplicationController
   def create
     @toy = current_user.toys.new(toy_params)
     if @toy.save
-      flash[:notice] = "#{@toy.name} is now avaiable to share."
+      flash[:notice] = "#{@toy.name} is now available to share"
       redirect_to user_path(current_user)
     else
       flash[:error] = @toy.errors.full_messages.join(", ")
