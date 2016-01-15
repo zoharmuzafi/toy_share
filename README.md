@@ -1,4 +1,3 @@
-
 #ToyBin
 
 ## Introduction
@@ -7,29 +6,17 @@ Toy Bin is a search engine that helps members look for donated children toys bas
 
 ##Technologies
 
-** Backend: ** Ruby on Rails, AJAX, PostgreSQL, RSpec, JavaScript
+** Backend:** Ruby on Rails, AJAX, PostgreSQL, RSpec, JavaScript
 
-** Frontend: ** HTML, CSS, jQuery, Materialize
+** Frontend:** HTML, CSS, jQuery, Materialize
 
 ##Additional Features 
 
 FaceBook API, Integerated Chat Message, LogoMakr, PaperClip, Heroku, Amazon Web Services 
 
-
-##Project Structure
-
-_Facebook and RSpec (Cynthia)_ - Members have an option to log in using their Facebook account, which will make it an easy way to access the site. The toy and user model were tested using RSpec as well as the toy controller. Testing was done on about 50% of application using RSPec. 
-
-_MVC and Styling (Michael)_ - The Model, View and Controller are centralized mainly around users and toys. The styling is done using Materialize, a responsive CSS framework. 
-
-
-
-
-
-
 ##ToyBin 
 
-! (/images_ReadME/ToyBin_index.png)
+!(/images_ReadME/index_page.png)
 
 ##Future Steps
 
@@ -46,10 +33,10 @@ We understand that Toy Bin is a work in progress and we hope we can add the foll
 
 ##About The Team 
 	
-[Andre Massey] ( #https://www.linkedin.com/in/andremassey1) - 
+[Andre Massey]( #https://www.linkedin.com/in/andremassey1) - "Started from the bottom, now I'm tall."
 
-[Cynthia Salinas] (#https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
+[Cynthia Salinas]( #https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
 
-[Zohar Muzafi] (#https://www.linkedin.com/in/zoharmuzafi) - 
+[Zohar Muzafi]( #https://www.linkedin.com/in/zoharmuzafi) - "Used to code in school, now I'm back in the game."
 	
-[Michael Rockway](#https://www.linkedin.com/in/mrockway) - 
+[Michael Rockway]( #https://www.linkedin.com/in/mrockway) - "Coding is just like bookkeeping, you gotta check your records."
