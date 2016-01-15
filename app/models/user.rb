@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
                       storage: :s3,
                       s3_credentials: Proc.new { |a| a.instance.s3_credentials },
                       s3_host_name: 's3-us-west-2.amazonaws.com',
-                      path: "user/:id/:style/image.:extension",
+                      path: "users/:id/:style/image.:extension",
                       default_url: "https://s3-us-west-2.amazonaws.com/toybinwdi24/missing.png" 
                       
 	validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
