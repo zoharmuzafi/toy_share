@@ -1,37 +1,51 @@
-  </br>
+</br>
+<div class="container">
   <div class="row">
-    <div class="col s8 m4">
-      <div class="card z-depth-2"id="blank-card">
-        <div class= "valign-wrapper" id="card-image">
-          <%= image_tag @user.avatar.url(:large), class: "valign toy-image responsive-img" %>
+    <div class="col s7 offset-s3 m4">
+      <div class="card z-depth-2 blank-card">
+        <div class= "card-background" style="background-image: url(<%= @user.avatar.url(:large) %>)">
           <span class="card-title"></span>
         </div>
         <div class="card-content">
           <h5><%= @user.f_name %> <%= @user.l_name %>    <%= link_to 'mode_edit', edit_user_path(@user), class: "material-icons" %> </h5>
           <p><small>Member Since: <%=@user.created_at.strftime("%B %d, %Y")%></small></p>
+          <h5>City:</h5>
+          <p><%= link_to "#{@user.city.name}", toys_path(name: "#{@user.city.name}")  %></p>
           <h5>Bio:</h5>
           <p> <%= @user.bio %> </p>
         </div>
-        <div class="card-action">
-          <%= link_to 'Add new toy', new_toy_path(@toy), class: "waves-effect waves-light btn" %>
-        </div>
+        <%= link_to new_toy_path do %>
+          <div class="user-new-toy waves-effect waves-light btn">
+            <p>Add a toy</p>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="col s4 m8">
+    <div class="col s7 offset-s3 m8">
       <% if @toys.any? %>
-      <% (@toys).in_groups_of(3, false).each do |group| %>
+      <% (@toys).reverse.in_groups_of(3, false).each do |group| %>
       <div class="row">
         <% group.each do |t| %>
         <div class="col s12 m4">
-          <div class="card z-depth-1" id="blank-card">
-            <div class= "valign-wrapper" id="card-image">
-              <%= image_tag t.image.url(:medium), class: "valign toy-image responsive-img" %>
+          <div class="card z-depth-1 blank-card user-show-card <%= t.available ? '' : 'unavailableToy' %>   ">
+            <div class= "card-background" style="background-image: url(<%= t.image.url(:medium)%>)">
             </div>
             <div class="card-content">
               <p><%= t.name %></p>
-              <p><%= t.description %></p>
+              <p class="truncate"><%= t.description %></p>
               <%= link_to 'mode_edit', edit_toy_path(t), class: "material-icons" %> <%= link_to 'delete',toy_path(t), data: {confirm: "Are you sure?"}, :method => :delete, class: "material-icons" %>
               <p><small><%= t.created_at.strftime("%A, %B %d") %></small></p>
+            </div>
+            <div>
+            <%= form_for :toy, url:"/toys/#{t.id}", :method =>:put do |f| %>
+                <% if t.available %>
+                 <% @val = false %>
+                <% else %>
+                  <% @val = true %>
+                <% end %>
+                <%= f.hidden_field :available, value: @val %>
+                <input type="submit" value='<%= t.available ? 'unavailable?' : 'available?' %>' class='givenToy waves-effect waves-light btn <%= t.available ? 'available' : 'unavailable' %>' id='<%= "#{t.id}" %>'>
+            <% end %>  
             </div>
           </div>
         </div>
@@ -39,9 +53,12 @@
       </div>
       <% end %>
       <%end%>
-      <div class="pagination">
-        <a><%= will_paginate @toys, class: "waves-effect waves-light btn" %></a>
-      </div>
+      <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @toys %>
+    </div>
+    <%= will_paginate @toys, :container => false, class: "waves-effect waves-light btn" %>
+  </div>
     </div>
   </div>
 </div>

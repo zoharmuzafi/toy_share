@@ -4,9 +4,17 @@
 #toy-row {
 	margin-top: 60px;
 }
+.all-toys-button {
+	padding-right: 0 !important;
+}
+#all-toys-button {
+	border-radius: 0 40px 0 40px;
+	margin-right: 0;
+}
 
-#toys-button {
-	margin-right: 2%;
+.new-toy-button {
+	background-color: #F9FA82 !important;
+	color: #000000 !important;
 }
 
 .toys-button {
@@ -27,7 +35,7 @@ textarea{
 	height: 55% !important;
 }
 
-#card-image {
+.card-image {
 	height: 200px;
 }
 
@@ -58,6 +66,7 @@ textarea{
 }
 
 .card-background {
+	background-position: center; 
 	background-size: cover !important;
 	border-radius: 40px 40px 0 0 !important;
 	height: 250px !important;

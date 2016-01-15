@@ -6,9 +6,9 @@ class ToysController < ApplicationController
     @cities = City.find_by_name(params[:name]) || City.all
     @toys = Toy.all
     if params[:name].present?   
-      @toys = Toy.where(city_id: @cities.id).by_gender(params[:gender]).by_age_range(params[:age_range])
+      @toys = Toy.where(city_id: @cities.id).by_gender(params[:gender]).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
     else
-      @toys = Toy.by_gender(params[:gender]).by_age_range(params[:age_range])
+      @toys = Toy.by_gender(params[:gender]).by_age_range(params[:age_range]).paginate(:page => params[:page], :per_page => 12)
     end
   end
 
@@ -61,7 +61,6 @@ class ToysController < ApplicationController
       redirect_to edit_toy_path(@toy)
     end
   end
-
 
   private 
 

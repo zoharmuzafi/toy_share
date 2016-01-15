@@ -2,6 +2,7 @@
 	background-image: url("https://s3-us-west-2.amazonaws.com/toybinwdi24/stuffed-animal-crop.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 	width: 100%;
 	padding: 10% 0 20% 0;
 	margin-bottom: 0 !important;
@@ -28,6 +29,9 @@ body > div.row > div > ul.indicators > li.indicator-item {
 body > div.row > div > ul.indicators {
 	z-index: 2;
 }
+.row .col.s12{
+	padding-bottom: 10px;
+}
 #toyimage {
 	height: 500px;
 }
@@ -41,14 +45,18 @@ body > div.row > div > ul.indicators {
 
 #toy-headline {
 	color: #FFFFFF;
-	font-size: 70px;
+	font-size: 80px;
 	text-shadow: 2px 2px 2px #141414;
+	font-family: 'Love Ya Like A Sister', cursive;
+	text-align: center;
 }
 
 #toy-subheadline {
 	color: #FFFFFF;
 	font-size: 30px;
 	text-shadow: 2px 2px 2px #141414;
+	font-family: 'Love Ya Like A Sister', cursive;
+	text-align: center;
 }
 .recent-toy-title {
 	color: #000000;
@@ -59,14 +67,13 @@ body > div.row > div > ul.indicators {
 
 .blank-card {
 	border-radius: 40px;
-	min-height: 350px;
+	min-height: 200px;
 	margin: 0 10px;
 }
 .card-image {
 	height: 350px;
 }
 .toys-images {
-	border-radius: 40px 40px 0 0;
 	margin-left: auto;
 	margin-right: auto;
 	max-height: 100%;
@@ -116,10 +123,13 @@ body > div.row > div > ul.indicators {
 	width: 20%;
 }
 .howDetails{
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 200;
 }
 .social{
 	width: 30%;
 	display: inline-block;
 }
+
+h4 {
+	font-family: 'Love Ya Like A Sister', cursive;

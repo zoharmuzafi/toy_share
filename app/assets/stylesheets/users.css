@@ -1,3 +1,36 @@
 /*// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
+.user-show-card {
+	height: 450px !important;
+	overflow: hidden;
+	position: relative;
+}
+
+.givenToy{
+    border-radius: 0 0 40px 40px !important;
+    color: #FFFFFF  !important;
+    width: 100%;
+    position: absolute !important;
+    bottom: 0px;
+}
+.available{
+	background-color: #2DA0FA !important;
+}
+.unavailable{
+	background-color: red !important;
+}
+.unavailableToy{
+	opacity: 0.5;
+
+}
+
+.user-new-toy {
+	background-color: #F9FA82 !important;
+	border-radius: 0 0 40px 40px !important;
+	color: #000000 !important;
+	width: 100%;
+}
+body > div.container > div > div.col.s7.offset-s3.m4 > div > a > div > p {
+	margin: 0 !important;
+}

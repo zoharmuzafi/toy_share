@@ -5,8 +5,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col s12 m2">
+		<div class="col s7 offset-s3 m2">
 			<div>
+				<%= link_to "Add Toy", new_toy_path, class: "btn waves-effect waves-light new-toy-button" %>
 				<p>Filter toys by:</p>
 				<%= form_tag '', method: :get do %>
 					<div class="input-group">
@@ -48,12 +49,13 @@
 					<div class="row">
 						<% group.each do |toy| %>
 							<%= link_to(toy_path(toy)) do %>
-							<div class="col s12 m4">
+							<div class="col s7 offset-s3 m4">
 								<div class="z-depth-2 blank-card">
 									<div class="card-background" style="background-image: url(<%= toy.image.url(:large) %>)">
 									</div>
 									<div class="center">
 										<p><%= toy.name %></p>
+										</br>
 									</div>
 								</div>
 							</div>
@@ -61,8 +63,15 @@
 						<% end %>
 					</div>
 			<% end %>
+		<div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @toys %>
+    </div>
+    <%= will_paginate @toys, :container => false, class: "waves-effect waves-light btn" %>
+  </div>
 		<% else %>
-			<h2>Sorry, there are no toys matching your search filter(s).</h2>
+			<h2>Sorry, there are no toys matching your search.</h2>
 		<% end %>
 	</div>
+</div>
 </div>

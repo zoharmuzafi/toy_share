@@ -28,6 +28,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
   def show
     @user = User.find(params[:id])
     @toys = @user.toys.paginate(:page => params[:page], :per_page => 6)
+    @cities = City.all
   end
 
   def edit
@@ -62,6 +63,6 @@ before_filter :authorize, only: [:edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio, :toy_show, :toy_id)
+      params.require(:user).permit(:f_name, :l_name, :email, :avatar, :password, :bio, :toy_show, :toy_id, :city_id)
     end
 end
