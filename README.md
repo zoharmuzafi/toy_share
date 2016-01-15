@@ -18,8 +18,9 @@ FaceBook API, Integerated Chat Message, LogoMakr, PaperClip, Heroku, Amazon Web 
 
 ##Project Structure
 
-_Facebook and Rspec (Cynthia)_ - Members have an option to login using their Facebook account, which will make it an easy to access the site. Testing was done on about 50% of application. The toy and user model were tested using RSpec as well as the toy controller. 
+_Facebook and RSpec (Cynthia)_ - Members have an option to log in using their Facebook account, which will make it an easy way to access the site. The toy and user model were tested using RSpec as well as the toy controller. Testing was done on about 50% of application using RSPec. 
 
+_MVC and Styling (Michael)_ - The Model, View and Controller are centralized mainly around users and toys. The styling is done using Materialize, a responsive CSS framework. 
 
 
 
