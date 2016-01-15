@@ -31,10 +31,11 @@ We understand that Toy Bin is a work in progress and we hope we can add the foll
 
 ##About The Team 
 	
- [Andre Massey](https://www.linkedin.com/in/andremassey1) - "Started from the bottom, now I'm tall."
+[Andre Massey](https://www.linkedin.com/in/andremassey1) - "Started from the bottom, now I'm tall."
 
- [Cynthia Salinas](https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
+[Cynthia Salinas](https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
 
-[Zohar Muzafi](https://www.linkedin.com/in/zoharmuzafi) - "Used to code in school, now I'm back in the game."
-	
-[Michael Rockway](https://www.linkedin.com/in/mrockway) - "Coding is just like bookkeeping, you gotta check your records."
+[Zohar Muzafi](https://www.linkedin.com/in/zoharmuzafi) - "Used to code in school, now I'm back in the game."	
+
+[Michael Rockway](https://www.linkedin.com/in/mrockway) - "Coding is just like bookkeeping, you gotta check your records." 
+
