@@ -4,4 +4,22 @@
 .user-show-card {
 	height: 450px !important;
 	overflow: hidden;
+	position: relative;
+}
+
+.givenToy{
+    border-radius: 0 0 40px 40px !important;
+    color: #FFFFFF  !important;
+    width: 100%;
+    position: absolute !important;
+    bottom: 0px;
+}
+.available{
+	background-color: #2DA0FA !important;
+}
+.unavailable{
+	background-color: red !important;
+}
+.unavailableToy{
+	opacity: 0.5;
 }

@@ -62,7 +62,6 @@ class ToysController < ApplicationController
     end
   end
 
-
   private 
 
   def toy_params
