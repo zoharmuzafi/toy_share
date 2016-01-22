@@ -2,19 +2,11 @@
 
 ## Introduction
 
-Toy Bin is a search engine that helps members look for donated children toys based on the inventory of toys that other members have posted. When toys are posted, the toy’s information is instantly viewed on the site. Toy Bin also allows members to communicate with other members via the integrated chat message system. Once messages are sent, they can be seen on the member’s profile page. Toy Bin also allows members to look at other profiles, making it the best way to stay connected with the Toy Bin Community! 
+The app allows the users to upload their old toys and offer them to the community. The users can choose any desired toy from the ones available in the bin using various search filters. Users can login to the app and manage their profile. A profile can be created using either Facebook auth or by email (the app wasn’t approved by facebook and Fb connection might not be available). Users can also upload toys and menage them (edit/delete/make available or unavailable), menage their own profile including upload a profile picture, edit/delete their profile, and connect with other users using the inbox.
 
 ##Technologies
 
-**Backend:** Ruby on Rails, AJAX, PostgreSQL, RSpec, JavaScript
-
-**Frontend:** HTML, CSS, jQuery, Materialize
-
-**Additional Features:** FaceBook API, Integerated Chat Message, LogoMakr, PaperClip, Heroku, Amazon Web Services 
-
-##ToyBin 
-
-![ToyBin] (/images_ReadME/index_page.png)
+Ruby on Rails, Postgres, Omniauth, Bcrypt, Materialize, Paperclip, Amazon S3, FFaker, Willpaginate, Mailer, Rspec.
 
 ##Future Steps
 
@@ -29,13 +21,4 @@ We understand that Toy Bin is a work in progress and we hope we can add the foll
 *	Test the entire application, so that all features are measured
 
 
-##About The Team 
-	
-[Andre Massey](https://www.linkedin.com/in/andremassey1) - "Started from the bottom, now I'm tall."
-
-[Cynthia Salinas](https://www.linkedin.com/in/cynthiagsalinas) - “I used to be running the office and now I’m making my own apps!”
-
-[Zohar Muzafi](https://www.linkedin.com/in/zoharmuzafi) - "Used to code in school, now I'm back in the game."	
-
-[Michael Rockway](https://www.linkedin.com/in/mrockway) - "Coding is just like bookkeeping, you gotta check your records." 
 
